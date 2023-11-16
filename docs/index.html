@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>1-5</title>
+</head>
+
+<body>
+    <header>
+        <h1>1-5</h1>
+    </header>
+
+    <section id="notices">
+        <h2>공지사항</h2>
+        <table border="1" id="noticesTable">
+            <tr>
+                <th>날짜</th>
+                <th>과목</th>
+                <th>내용</th>
+            </tr>
+            <tr>
+                <td>~11/21</td>
+                <td>독일어</td>
+                <td>편지 답장하기</td>
+            </tr>
+	<tr>
+                <td>~11/23</td>
+                <td>수학</td>
+                <td>책, 워크북 검사</td>
+        </table>
+
+    <section id="timetable">
+        <h2>시간표</h2>
+        <label for="dateSelector">날짜 선택: </label>
+        <select id="dateSelector" onchange="updateTimetable()">
+            <option value="monday">월요일</option>
+            <option value="tuesday">화요일</option>
+            <option value="wednesday">수요일</option>
+            <option value="thursday">목요일</option>
+            <option value="friday">금요일</option>
+        </select>
+        <table border="1" id="timetableTable">
+            <!-- 시간표 내용은 자바-->
+        </table>
+    </section>
+
+    <section id="meal-menu">
+        <!-- 급식표 섹션 내용은 그대로 -->
+    </section>
+
+    <script>
+        function updateTimetable() {
+            const dateSelector = document.getElementById("dateSelector");
+            const selectedDate = dateSelector.value;
+            const timetableTable = document.getElementById("timetableTable");
+            timetableTable.innerHTML = "";
+
+            switch (selectedDate) {
+                case "monday":
+                    // 월요일 시간표
+                    timetableTable.innerHTML = `
+                        <tr>
+                            <th>요일</th>
+                            <th>1교시</th>
+                            <th>2교시</th>
+                            <th>3교시</th>
+                            <th>4교시</th>
+                            <th>5교시</th>
+                            <th>6교시</th>
+                            <th>7교시</th>
+                        </tr>
+                        <tr>
+                            <td>요일</td>
+                            <td>자율</td>
+                            <td>지리</td>
+                            <td>체육</td>
+                            <td>수학</td>
+                            <td>영어</td>
+                            <td>생명</td>
+                            <td>진로</td>
+                        </tr>
+                        <tr>
+                            <th>T</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>김은정T</td>
+                            <td></td>
+                            <td></td>
+                        </tr>`;
+                    break;
+                case "tuesday":
+                    // 화요일 시간표
+                    timetableTable.innerHTML = `
+                        <tr>
+                            <th>요일</th>
+                            <th>1교시</th>
+                            <th>2교시</th>
+                            <th>3교시</th>
+                            <th>4교시</th>
+                            <th>5교시</th>
+                            <th>6교시</th>
+                            <th>7교시</th>
+                        </tr>
+                        <tr>
+                            <td>요일</td>
+                            <td>음/미</td>
+                            <td>음/미</td>
+                            <td>수학</td>
+                            <td>일반사회</td>
+                            <td>국어</td>
+                            <td>영어</td>
+                            <td>독/프</td>
+                        </tr>
+                        <tr>
+                            <th>T</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>류정민T</td>
+                            <td>최소연T</td>
+                            <td>공소정T</td>
+                            <td></td>
+                        </tr>`;
+                    break;
+                case "wednesday":
+                    // 수요일 시간표
+                    timetableTable.innerHTML = `
+                        <tr>
+                            <th>요일</th>
+                            <th>1교시</th>
+                            <th>2교시</th>
+                            <th>3교시</th>
+                            <th>4교시</th>
+                            <th>5교시</th>
+                            <th>6교시</th>
+                        </tr>
+                        <tr>
+                            <td>요일</td>
+                            <td>영어</td>
+                            <td>한국사</td>
+                            <td>체육</td>
+                            <td>국어</td>
+                            <td>자율</td>
+                            <td>자율</td>
+                        </tr>
+                        <tr>
+                            <th>T</th>
+                            <td>정민주T</td>
+                            <td></td>
+                            <td></td>
+                            <td>최수진T</td>
+                            <td>동아리</td>
+                            <td>동아리</td>
+                        </tr>`;
+                    break;
+                case "thursday":
+                    // 목요일 시간표
+                    timetableTable.innerHTML = `
+                        <tr>
+                            <th>요일</th>
+                            <th>1교시</th>
+                            <th>2교시</th>
+                            <th>3교시</th>
+                            <th>4교시</th>
+                            <th>5교시</th>
+                            <th>6교시</th>
+                            <th>7교시</th>
+                        </tr>
+                        <tr>
+                            <td>요일</td>
+                            <td>기가</td>
+                            <td>기가</td>
+                            <td>국어</td>
+                            <td>영어</td>
+                            <td>과탐실</td>
+                            <td>지구과학</td>
+                            <td>수학</td>
+                        </tr>
+                        <tr>
+                            <th>T</th>
+                            <td></td>
+                            <td></td>
+                            <td>김원규T</td>
+                            <td>원어민T</td>
+                            <td>물리</td>
+                            <td></td>
+                            <td></td>
+                        </tr>`;
+                    break;
+                case "friday":
+                    // 금요일 시간표
+                    timetableTable.innerHTML = `
+                        <tr>
+                            <th>요일</th>
+                            <th>1교시</th>
+                            <th>2교시</th>
+                            <th>3교시</th>
+                            <th>4교시</th>
+                            <th>5교시</th>
+                            <th>6교시</th>
+                            <th>7교시</th>
+                        </tr>
+                        <tr>
+                            <td>요일</td>
+                            <td>윤리</td>
+                            <td>독/프</td>
+                            <td>기가</td>
+                            <td>화학</td>
+                            <td>수학</td>
+                            <td>국어</td>
+                            <td>한국사</td>
+                        </tr>
+                        <tr>
+                            <th>T</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>김원규T</td>
+                            <td></td>
+                        </tr>`;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
