@@ -35,6 +35,20 @@
         <h1>1-5</h1>
     </header>
 
+    <section id="timetable">
+        <h2>시간표</h2>
+        <label for="dateSelector" id="select">요일 선택: </label>
+        <select id="dateSelector" onchange="updateTimetable()">
+            <option value="monday">월요일</option>
+            <option value="tuesday">화요일</option>
+            <option value="wednesday">수요일</option>
+            <option value="thursday">목요일</option>
+            <option value="friday">금요일</option>
+        </select>
+        <table id="timetableTable">
+        </table>
+    </section>
+
     <section id="task">
         <h2>숙제/수행평가</h2>
         <table border="1" id="taskTable">
@@ -110,21 +124,6 @@
                 <td>최소연T -> 최수진T</td>
                 <td></td>
             </tr>
-        </table>
-    </section>
-	    
-    <section id="timetable">
-        <h2>시간표</h2>
-        <label for="dateSelector">날짜 선택: </label>
-        <select id="dateSelector" onchange="updateTimetable()">
-            <option value="monday">월요일</option>
-            <option value="tuesday">화요일</option>
-            <option value="wednesday">수요일</option>
-            <option value="thursday">목요일</option>
-            <option value="friday">금요일</option>
-        </select>
-        <table id="timetableTable">
-            <!-- 시간표 내용은 자바-->
         </table>
     </section>
 
