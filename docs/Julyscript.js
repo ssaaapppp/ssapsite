@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const currentDay = daysOfWeek[currentDate.getDay()];
     updateTimetable(currentDay);
-    generateTimetable(currentDay);
 });
 
 
