@@ -24,16 +24,17 @@ function updateTimetable() {
     const timetableTable = document.getElementById("timetableTable");
     timetableTable.innerHTML = "";
 
+
     switch (selectedDate) {
         case "monday":
-            timetableTable.innerHTML = generateTimetable(["자율", "지리", "체육", "수학", "영어", "생명", "진로"]);
+            timetableTable.innerHTML = generateTimetable(["자율", "지리", "체육", "수학", "영어", "생명", "진로"],);
             break;
         case "tuesday":
             timetableTable.innerHTML = generateTimetable(["음/미", "음/미", "수학", "일반사회", "국어", "영어", "독/프"], 7);
             break;
         case "wednesday":
             timetableTable.innerHTML = generateTimetable(["영어", "한국사", "체육", "국어", "자율", "자율"], 6);
-            timetableTable.innerHTML += `<tr><th>T</th><td>정민주T</td><td></td><td></td><td>최수진T</td><td>동아리</td><td>동아리</td></tr>`;
+            timetableTable.innerHTML += `<tr><th>T</th>a<td>정민주T</td><td></td><td></td><td>최수진T</td><td>동아리</td><td>동아리</td></tr>`;
             break;
         case "thursday":
             timetableTable.innerHTML = generateTimetable(["기가", "기가", "국어", "영어", "과탐실", "지구과학", "수학"], 7);
