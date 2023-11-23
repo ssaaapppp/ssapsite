@@ -26,7 +26,7 @@ function updateTimetable(seld) {
     const sd = dateSelector.value;
     const timetableTable = document.getElementById("timetableTable");
     timetableTable.innerHTML = "";
-    if(sd!="monday"&&sd!="tuesday"&&sd!="wednesday"&&sd!="thursday"&&sd!="friday"){
+    if(sd!="tuesday"&&sd!="wednesday"&&sd!="thursday"&&sd!="friday"){
 
     }
     else{
