@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
 
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>1-5 최고</title>
     <script src="Julyscript.js"></script>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prettyjune.css">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -23,7 +26,6 @@
         gtag('config', 'G-DQNSZ8D76S');
     </script>
     <!-- End Google Analytics 4 -->
-
 </head>
 
 <body onload="showDefaultTimetable()">
@@ -32,6 +34,20 @@
         <h1>1-5</h1>
     </header>
 
+    <section id="timetable">
+        <h2>시간표</h2>
+        <label for="dateSelector" id="select">요일 선택: </label>
+        <select id="dateSelector" onchange="updateTimetable()">
+            <option value="monday">월요일</option>
+            <option value="tuesday">화요일</option>
+            <option value="wednesday">수요일</option>
+            <option value="thursday">목요일</option>
+            <option value="friday">금요일</option>
+        </select>
+        <table id="timetableTable">
+        </table>
+    </section>
+
     <section id="task">
         <h2>숙제/수행평가</h2>
         <table border="1" id="taskTable">
@@ -39,54 +55,52 @@
                 <th>날짜</th>
                 <th>과목</th>
                 <th>내용</th>
-		<th>+</th>
+                <th>+</th>
             </tr>
             <tr>
                 <td>~11/24(금)</td>
                 <td>수학</td>
                 <td>교과서</td>
-		<td>끝까지(대단원, 익힘책 포함)</td>
-	    </tr>
-	    <tr>
+                <td>끝까지(대단원, 익힘책 포함)</td>
+            </tr>
+            <tr>
                 <td>~11/24(금)</td>
                 <td>과탐실</td>
                 <td>실험 결과 보고서</td>
-		<td></td>
-	    <tr>
+                <td></td>
+            <tr>
                 <td>~11/24(금)</td>
                 <td>영어</td>
                 <td>학습지</td>
-		<td>정민주 선생님 수업</td>
-	    <tr>
-		<td>11/24(금)</td>
-		<td>수학</td>
+                <td>정민주 선생님 수업</td>
+            <tr>
+                <td>11/24(금)</td>
+                <td>수학</td>
                 <td>대단원, 익힘책</td>
-		<td></td>
-	    <tr>
+                <td></td>
+            <tr>
                 <td>11/27(월)</td>
                 <td>체육</td>
                 <td>공 던지기 수행</td>
-		<td>남자 만점 : 25개 / 여자 만점 : 15개</td>
-	    <tr>
-	    <tr>
-		<td>12/1(금)</td>
-		<td>기술</td>
-                <td>학습지 제출/
-			다리 완성</td>
-		<td>학습지 당일 아침 제출, 다리 만들기 마지막 시간</td>
-	    </tr>
+                <td>남자 만점 : 25개 / 여자 만점 : 15개</td>
+            <tr>
+                <td>12/1(금)</td>
+                <td>기술</td>
+                <td>학습지 제출/다리 완성</td>
+                <td>학습지 당일 아침 제출, 다리 만들기 마지막 시간</td>
+            <tr>
                 <td>?</td>
                 <td>진로</td>
                 <td>PPT</td>
-		<td></td>
-	    <tr>
-		<td>?</td>
-		<td>영어</td>
-		<td>설문조사</td>
-                <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfz8Ewbr-xLsqhcmFNJA35CHlM4fyt672DUub2y9AucgOub8w/viewform">여기를 눌러 설문조사 바로가기</a>
-</td>
-	    </tr>
-	</table>
+                <td></td>
+            <tr>
+                <td>?</td>
+                <td>영어</td>
+                <td>설문조사</td>
+                <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfz8Ewbr-xLsqhcmFNJA35CHlM4fyt672DUub2y9AucgOub8w/viewform">여기를 눌러 설문조사 바로가기</a></td>
+            </tr>
+	    </table>
+    </section>
 
     <section id="notices">   
         <h2>공지사항</h2>
@@ -111,27 +125,10 @@
             </tr>
         </table>
     </section>
-	    
-    <section id="timetable">
-        <h2>시간표</h2>
-        <label for="dateSelector">날짜 선택: </label>
-        <select id="dateSelector" onchange="updateTimetable()">
-            <option value="monday">월요일</option>
-            <option value="tuesday">화요일</option>
-            <option value="wednesday">수요일</option>
-            <option value="thursday">목요일</option>
-            <option value="friday">금요일</option>
-        </select>
-        <table border="1" id="timetableTable">
-            <!-- 시간표 내용은 자바-->
-        </table>
-    </section>
 
     <section id="meal-menu">
         <!-- 급식표 섹션 내용은 그대로 -->
     </section>
 
-
 </body>
-
 </html>

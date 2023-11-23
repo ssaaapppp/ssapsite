@@ -1,4 +1,4 @@
-function generateTimetable(day, classes) {
+function generateTimetable(day, teachers, classes) {
     return `
         <tr>
             <th>요일</th>
@@ -14,33 +14,50 @@ function generateTimetable(day, classes) {
             <td>요일</td>
             ${day.map(subject => `<td>${subject}</td>`).join('')}
         </tr>
-        ${classes === 7 ? `<tr><th>T</th>${day.map(() => '<td></td>').join('')}</tr>` : ''}
+        <tr>
+            <td>선생님</td>
+            ${teachers.map(teacher => `<td>${teacher}</td>`).join('')}
+        </tr>  
     `;
 }
 
-function updateTimetable() {
+function updateTimetable(seld) {
     const dateSelector = document.getElementById("dateSelector");
-    const selectedDate = dateSelector.value;
+    const sd = dateSelector.value;
     const timetableTable = document.getElementById("timetableTable");
     timetableTable.innerHTML = "";
+    if(sd!="monday"&&sd!="tuesday"&&sd!="wednesday"&&sd!="thursday"&&sd!="friday"){
 
-    switch (selectedDate) {
+    }
+    else{
+        seld=sd;
+    }
+    switch (seld) {
         case "monday":
-            timetableTable.innerHTML = generateTimetable(["자율", "지리", "체육", "수학", "영어", "생명", "진로"]);
+            timetableTable.innerHTML = generateTimetable(["자율", "지리", "체육", "수학", "영어", "생명", "진로"],["이현희", "김갑철", "정성태", "이현희", "김은정", "신혜원", "정민주"],7);
             break;
         case "tuesday":
-            timetableTable.innerHTML = generateTimetable(["음/미", "음/미", "수학", "일반사회", "국어", "영어", "독/프"], 7);
+            timetableTable.innerHTML = generateTimetable(["음/미", "음/미", "수학", "일반사회", "국어", "영어", "독/프"],["윤수희", "윤수희", "이현희", "류정민", "최소연", "공소정", "정민주"], 7);
             break;
         case "wednesday":
-            timetableTable.innerHTML = generateTimetable(["영어", "한국사", "체육", "국어", "자율", "자율"], 6);
-            timetableTable.innerHTML += `<tr><th>T</th><td>정민주T</td><td></td><td></td><td>최수진T</td><td>동아리</td><td>동아리</td></tr>`;
+            timetableTable.innerHTML = generateTimetable(["영어", "한국사", "체육", "국어", "자율", "자율"],["정민주", "남정호", "정성태", "최수진", "이현희", "이현희"], 6);
             break;
         case "thursday":
-            timetableTable.innerHTML = generateTimetable(["기가", "기가", "국어", "영어", "과탐실", "지구과학", "수학"], 7);
-            timetableTable.innerHTML += `<tr><th>T</th><td></td><td></td><td>김원규T</td><td>원어민T</td><td>물리</td><td></td><td></td></tr>`;
+            timetableTable.innerHTML = generateTimetable(["기가", "기가", "국어", "영어", "과탐실", "지구과학", "수학"],["현수경", "현수경", "김원규", "G.Smith", "최지훈", "송윤근", "이현희"], 7);
             break;
         case "friday":
-            timetableTable.innerHTML = generateTimetable(["윤리", "독/프", "기가", "화학", "수학", "국어", "한국사"], 7);
+            timetableTable.innerHTML = generateTimetable(["윤리", "독/프", "기가", "화학", "수학", "국어", "한국사"],["최지영", "정민주", "김창훈", "김연경", "이현희", "김원규", "남정호"], 7);
             break;
     }
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const currentDate = new Date();
+    const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    const currentDay = daysOfWeek[currentDate.getDay()];
+    updateTimetable(currentDay);
+});
+
+
