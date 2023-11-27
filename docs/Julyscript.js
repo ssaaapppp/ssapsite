@@ -1,7 +1,6 @@
 function generateTimetable(day, teachers, classes) {
     return `
         <tr>
-            <th>요일</th>
             <th>1교시</th>
             <th>2교시</th>
             <th>3교시</th>
@@ -11,12 +10,10 @@ function generateTimetable(day, teachers, classes) {
             ${classes === 7 ? "<th>7교시</th>" : ""}
         </tr>
         <tr>
-            <td>요일</td>
             ${day.map(subject => `<td>${subject}</td>`).join('')}
         </tr>
         <tr>
-            <td>선생님</td>
-            ${teachers.map(teacher => `<td>${teacher}</td>`).join('')}
+        ${teachers.map(teacher => `<td>${teacher}</td>`).join('')}
         </tr>  
     `;
 }
