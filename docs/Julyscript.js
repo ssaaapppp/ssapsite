@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentDate = new Date();
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const currentDay = daysOfWeek[currentDate.getDay()];
-    $("#dateSelector").val(currentDate.getDay()).prop("selected", true);
     initTimetable(currentDay);
 });
 
