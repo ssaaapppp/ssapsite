@@ -32,7 +32,7 @@ function updateTimetable(seld) {
             timetableTable.innerHTML = generateTimetable(["음/미", "음/미", "수학", "일반사회", "국어", "영어", "독/프"],["윤수희", "윤수희", "이현희", "류정민", "최소연", "공소정", "정민주"], 7);
             break;
         case "wednesday":
-            timetableTable.innerHTML = generateTimetable(["영어", "한국사", "체육", "국어", "자율", "자율"],["정민주", "남정호", "정성태", "최수진", "이현희", "이현희"], 6);
+            timetableTable.innerHTML = generateTimetable(["영어", "수학", "체육", "국어", "자율", "자율"],["정민주", "남정호", "정성태", "최수진", "이현희", "이현희"], 6);
             break;
         case "thursday":
             timetableTable.innerHTML = generateTimetable(["기가", "기가", "국어", "영어", "과탐실", "지구과학", "수학"],["현수경", "현수경", "김원규", "G.Smith", "최지훈", "송윤근", "이현희"], 7);
@@ -55,7 +55,7 @@ function initTimetable(seld) {
             timetableTable.innerHTML = generateTimetable(["음/미", "음/미", "수학", "일반사회", "국어", "영어", "독/프"],["윤수희", "윤수희", "이현희", "류정민", "최소연", "공소정", "정민주"], 7);
             break;
         case "wednesday":
-            timetableTable.innerHTML = generateTimetable(["영어", "한국사", "체육", "국어", "자율", "자율"],["정민주", "남정호", "정성태", "최수진", "이현희", "이현희"], 6);
+            timetableTable.innerHTML = generateTimetable(["영어", "수학", "체육", "국어", "자율", "자율"],["정민주", "남정호", "정성태", "최수진", "이현희", "이현희"], 6);
             break;
         case "thursday":
             timetableTable.innerHTML = generateTimetable(["기가", "기가", "국어", "영어", "과탐실", "지구과학", "수학"],["현수경", "현수경", "김원규", "G.Smith", "최지훈", "송윤근", "이현희"], 7);
