@@ -67,7 +67,7 @@ function initTimetable(seld) {
 }
 
 function meal() {
-    let url = "https://open.neis.go.kr/hub/mealServiceDietInfo?ATPT_OFCDC_SC_CODE=D10&SD_SCHUL_CODE=7004180MLSV_YMD=" + 20231127;
+    let url = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=bf9859dcd1014bfc98d4382689ebe8d1&ATPT_OFCDC_SC_CODE=D10&SD_SCHUL_CODE=7004180&MLSV_YMD=" + 20231201;
     let data="";
     fetch(url)
         .then(response => response.text())
