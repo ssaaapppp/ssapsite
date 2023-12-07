@@ -1,6 +1,52 @@
-h1, h2, h3, h4, h5, h6, p {
-    font-family: 'IBM Plex Sans KR', sans-serif;
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+h1, h2, h3, h4, h5, h6, p, table{
+    font-family: 'Pretendard', sans-serif;
 }
+
+body {
+    background-color: #ffffff;
+    color: #444444;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background: linear-gradient(-10deg,#FFE944,#ffffff );
+    animation: gradient 20s ease infinite;
+    background-size: 120% 120%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 00%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 00%;
+    }
+}
+
+
+/*구분선*/
+hr.dashed {
+    border-top: 3px solid rgba(255, 174, 0, 0.18);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+header{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
 
 select {
     color: #444;
@@ -8,58 +54,61 @@ select {
     padding: 0.6em 1.4em 0.5em 0.8em;
     margin: 0;
     border: 1px solid #aaa;
-    border-radius: 0.5em;
+    border-radius: 1em;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    width: 90%;
+    height: 50px;
 }
 
-table, th, td {
-    border: 2px solid #444444;
+header {
+    background-color: #fffae4;
+    color: #ffd500;
     text-align: center;
+    font-size: 2.0em;
+    font-weight: bold;
+    border-radius: 0.7em;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
+}
+
+table, tr, td {
+    text-align: center;
+    height: 50px;
+    padding: 10px;
 }
 
 table {
     font-size: 2.0em;
-    border-collapse: collapse;
-    border-radius: 50px;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
     margin: auto;
 }
 
-th {
-    height: 50px;
-    padding: 10px;
+tr {
     background-color: #444444;
     color: white;
 }
 
 td {
-    height: 50px;
-    padding: 10px;
+    border: solid 2px #000;
     background-color: #ffffff;
+    border-style: none solid solid none;
     color: black;
 }
 
-header {
-    background-color: #444444;
-    color: white;
-    text-align: center;
-    font-size: 2.0em;
-    font-weight: bold;
-    border-radius: 50px;
-    height: 100px;
-}
+tr:first-child td:first-child { border-top-left-radius: 10px; }
+tr:first-child td:last-child { border-top-right-radius: 10px; }
 
+tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+tr:last-child td:last-child { border-bottom-right-radius: 10px; }
+
+tr:first-child td { border-top-style: solid; }
+tr td:first-child { border-left-style: solid; }
+
+/*시간표 & 숙제수행평가*/
 h2 {
     font-size: 2.5em;
-    text-align: center;
-
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
-
-#select {
-    font-size: 1.5em;
     text-align: center;
     font-weight: bold;
     margin: 0;
