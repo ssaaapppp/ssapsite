@@ -42,23 +42,23 @@ select {
     padding: 0.6em 1.4em 0.5em 0.8em;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    font-size: 1.7em;
+    font-size: 3em;
     border: 1px solid #aaa;
     border-radius: 11em;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
     width: 95%;
-    height: 70px;
+    height: 100px;
 }
 
 header {
     background-color: #fffae4;
     color: #ffd500;
     text-align: center;
-    font-size: 4.0em;
+    font-size: 7.0em;
     font-weight: bold;
-    border-radius: 1.2em;
-    height: 200px;
-    line-height: 200px;
+    border-radius: 0.9em;
+    height: 300px;
+    line-height: 300px;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
     margin: 5% 10% ;
 }
@@ -99,7 +99,7 @@ tr td:first-child { border-left-style: solid; }
 
 /*시간표 & 숙제수행평가*/
 h2 {
-    font-size: 3.5em;
+    font-size: 5.5em;
     text-align: center;
     font-weight: bold;
     margin: 0;
