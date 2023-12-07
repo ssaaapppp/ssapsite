@@ -29,12 +29,11 @@
 
 <body>
     <header>
-        <h1>1-5</h1>
+        <h1 onClick="location.href='/'" style="cursor:pointer">1-5</h1>
     </header>
 
     <section id="timetable">
         <h2>시간표</h2>
-        <label for="dateSelector" id="select">요일 선택: </label>
         <select id="dateSelector" onchange="updateTimetable()"> <!-- 자바스크립트 불러와서 시간표 변경하기 -->
             <option value="monday">월요일</option>
             <option value="tuesday">화요일</option>
@@ -59,13 +58,6 @@
                     document.getElementById('myTable').innerHTML = data;
                 });
         </script>
-    </section>
-
-    <section id="space">   
-        <h2></h2>
-        <table>
-       
-        </table>
     </section>
 
     <section id="meal-menu">
