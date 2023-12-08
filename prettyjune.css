@@ -102,14 +102,14 @@ tr:first-child td { border-top-style: solid; }
 tr td:first-child { border-left-style: solid; }
 
 
-th:first-child th:first-child { border-top-left-radius: 50px; }
-th:first-child th:last-child { border-top-right-radius: 50px; }
+tr:first-child th:first-child { border-top-left-radius: 50px; }
+tr:first-child th:last-child { border-top-right-radius: 50px; }
 
-th:last-child th:first-child { border-bottom-left-radius: 50px; }
-th:last-child th:last-child { border-bottom-right-radius: 50px; }
+tr:last-child th:first-child { border-bottom-left-radius: 50px; }
+tr:last-child th:last-child { border-bottom-right-radius: 50px; }
 
-th:first-child th { border-top-style: solid; }
-th th:first-child { border-left-style: solid; }
+tr:first-child th { border-top-style: solid; }
+tr th:first-child { border-left-style: solid; }
 
 
 
