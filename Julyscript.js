@@ -92,6 +92,7 @@ function meal() {
 
 document.addEventListener("DOMContentLoaded", function() {
     meal();
+    document.getElementById('dateSelector').value = 'tuesday';
     const currentDate = new Date();
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     const currentDay = daysOfWeek[currentDate.getDay()];
