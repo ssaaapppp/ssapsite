@@ -31,39 +31,45 @@
     <header>
         <h1 onClick="location.href='/'" style="cursor:pointer">1-5</h1>
     </header>
+	
+	<div id="container">
+        <section id="timetable">
+            <h2>시간표</h2>
+            <select id="dateSelector" onchange="updateTimetable()"> <!-- 자바스크립트 불러와서 시간표 변경하기 -->
+                <option value="monday">월요일</option>
+                <option value="tuesday">화요일</option>
+                <option value="wednesday">수요일</option>
+                <option value="thursday">목요일</option>
+                <option value="friday">금요일</option>
+            </select>
+            <table id="timetableTable">
+            </table>
+        </section>
+    </div>
 
-    <section id="timetable">
-        <h2>시간표</h2>
-        <select id="dateSelector" onchange="updateTimetable()"> <!-- 자바스크립트 불러와서 시간표 변경하기 -->
-            <option value="monday">월요일</option>
-            <option value="tuesday">화요일</option>
-            <option value="wednesday">수요일</option>
-            <option value="thursday">목요일</option>
-            <option value="friday">금요일</option>
-        </select>
-        <table id="timetableTable">
-        </table>
-    </section>
+    <hr class="dashed"> <!-- divider -->
 
-    <hr class="dashed">
-
-    <section id="task">
-        <h2>숙제/수행평가</h2>
-        <table id="myTable"></table>
-
-        <script>
-            fetch('tasktable.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('myTable').innerHTML = data;
-                });
-        </script>
-    </section>
-
+   	<div id="container">
+        <section id="task">
+            <h2>숙제/수행평가</h2>
+            <table id="myTable"></table>
+    
+            <script>
+                fetch('tasktable.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('myTable').innerHTML = data;
+                    });
+            </script>
+        </section>
+	</div>
+            
+    
+    <hr class="dashed"> <!-- divider -->
+        
     <section id="meal-menu">
         <div id="geup"></div>
     </section>
 
-	
 </body>
 </html>
