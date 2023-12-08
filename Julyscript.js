@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const remainTime = document.querySelector("#remain-time");
 
 function diffDay() {
-    const masTime = new Date("2022-12-25");
+    const masTime = new Date("2023-12-22");
     const todayTime = new Date();
     
     const diff = masTime - todayTime;
