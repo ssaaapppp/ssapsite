@@ -35,6 +35,11 @@ hr.dashed {
     margin-bottom: 50px;
 }
 
+#container{
+    border-radius: 11em;
+    background-color: #fff;    
+}
+
 
 select {
     color: #444;
