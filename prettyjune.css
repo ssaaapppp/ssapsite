@@ -86,6 +86,8 @@ td {
     background-color: #ffffff;
     border-style: none solid solid none;
     color: black;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
 }
 
 tr:first-child td:first-child { border-top-left-radius: 50px; }
