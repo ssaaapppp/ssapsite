@@ -100,17 +100,17 @@ tr:first-child td { border-top-style: solid; }
 tr td:first-child { border-left-style: solid; }
 
 
+th:first-child th:first-child { border-top-left-radius: 50px; }
+th:first-child th:last-child { border-top-right-radius: 50px; }
+
+th:last-child th:first-child { border-bottom-left-radius: 50px; }
+th:last-child th:last-child { border-bottom-right-radius: 50px; }
+
+th:first-child th { border-top-style: solid; }
+th th:first-child { border-left-style: solid; }
 
 
 
-td:first-child tr:first-child { border-top-left-radius: 50px; }
-td:first-child tr:last-child { border-top-right-radius: 50px; }
-
-td:last-child tr:first-child { border-bottom-left-radius: 50px; }
-td:last-child tr:last-child { border-bottom-right-radius: 50px; }
-
-td:first-child tr { border-top-style: solid; }
-td tr:first-child { border-left-style: solid; }
 
 /*시간표 & 숙제수행평가*/
 h2 {
