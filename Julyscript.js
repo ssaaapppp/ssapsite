@@ -68,25 +68,24 @@ function initTimetable(seld) {
 
 function meal() {
     let url = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=bf9859dcd1014bfc98d4382689ebe8d1&ATPT_OFCDC_SC_CODE=D10&SD_SCHUL_CODE=7004180&MLSV_YMD=" + 20231201;
-    let data="";
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            let parser = new DOMParser();
-            let doc = parser.parseFromString(data, "text/html");
-            let elements = doc.querySelectorAll("DDISH_NM");
-            data= doc.querySelectorAll("DDISH_NM");
-
-            data = data.replace(/<br\/>/gi,"\n");
-            data = data.replace(/<DDISH_NM>/gi, "");
-            data = data.replace(/<\/DDISH_NM>/gi,"");
-            data = data.replace(/<!\[CDATA\[/gi,"");
-            data = data.replace(/]]>/gi,"");
-
-            if(data!=="") document.getElementById("geup").innerHTML = "급식:"+"\n"+data;
-            else document.getElementById("geup").innerHTML = "급식이 없습니다";
-        })
-        .catch(error => console.error('Error:', error));
+    fetch(url, {
+    method: 'GET',
+    headers: {
+       'Content-Type': 'application/json',
+    },
+    })
+    .then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+     }
+    return response.json();
+    })
+    .then(data => {
+        document.getElementById("geup").innerHTML = "급식:"+"\n"+data;
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
 
 }
 
