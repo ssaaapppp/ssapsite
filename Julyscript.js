@@ -90,7 +90,7 @@ function meal() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    diffDay()
+    diffDay();
     meal();
     const currentDate = new Date();
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
