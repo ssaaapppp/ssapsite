@@ -29,12 +29,18 @@
 
 <body>
     <header>
-        <h1 onClick="location.href='/'" style="cursor:pointer">1-5</h1>
+        <img id="logo" onClick="location.href='/'"  src="./src/knuhslogo.png" height="100px" />
     </header>
-	
+	<h3>안녕사에요!</h3>
+    <h4>1학년 5반의 남은 학기생활을 도울 SAPP 사이트, 쌉사이트입니다! </h4>
+    <div id="containerb">
+        <h2>방학까지:</h2>
+        <h2 id="dday"></h2>
+    </div>
+
 	<div id="containerb">
         <section id="timetable">
-            <h2>시간표</h2>
+            <h2>- 시간표 -</h2>
             <div id="containera">
                 <select id="dateSelector" onchange="updateTimetable()"> <!-- 자바스크립트 불러와서 시간표 변경하기 -->
                     <option value="monday">월요일</option>
@@ -53,7 +59,7 @@
 
    	<div id="containerb">
         <section id="task">
-            <h2>숙제/수행평가</h2>
+            <h2>- 숙제/수행평가 -</h2>
             <div id="containera">
                 <table id="myTable"></table>
                 <script>
@@ -75,7 +81,5 @@
 	    <iframe src="https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=bf9859dcd1014bfc98d4382689ebe8d1&ATPT_OFCDC_SC_CODE=D10&SD_SCHUL_CODE=7004180&MLSV_YMD=20231208" height="300" width="100%"></iframe>
     </section>
     -->
-	<h1>방학까지:</h1>
-    <h2 id="remain-time"></h2>
 </body>
 </html>

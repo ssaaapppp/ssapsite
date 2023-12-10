@@ -94,6 +94,7 @@ function meal() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    dday();
     meal();
     const currentDate = new Date();
     const daysOfWeek = ["monday", "monday", "tuesday", "wednesday", "thursday", "friday", "monday"];
@@ -102,5 +103,15 @@ document.addEventListener("DOMContentLoaded", function() {
     initTimetable(currentDay);
 });
 
-/***************/
-
+function dday() {
+    var x = setInterval(function() {
+    const dday = new Date("2023-12-22");
+    const now = new Date();
+    const gap = dday.getTime() - now.getTime();
+    const day = Math.floor(gap / (1000 * 60 * 60 * 24));
+    const hour = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minute = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+    const second = Math.floor((gap % (1000 * 60)) / 1000);
+    document.getElementById("dday").innerHTML =day + "일 " + hour + "시간 " + minute + "분 " + second + "초";
+    }, 1000);
+}

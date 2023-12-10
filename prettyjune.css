@@ -1,39 +1,21 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @font-face {
-    font-family: 'PyeongChang-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
+    font-family: "PyeongChangPeace";
+    src: url("src/PyeongChang-Regular.ttf") format("truetype");
     font-weight: normal;
-    font-style: normal;
 }
 
 
 h2, h3, h4, h5, h6, p, table{
-    font-family: 'PyeongChang-Bold', sans-serif;
+    font-family: 'PyeongChangPeace', sans-serif;
     margin: 0;
 }
 h1{
     margin: 0;
 }
-
-body {
-    color: #444444;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    height: auto;
-    background: #ffffff linear-gradient(-10deg, #FFE944, #ffffff);
-    animation: gradient 40s ease infinite;
-    background-size: 500% 500%;
-}
-@keyframes gradient {
-    0% {
-        background-position: 0 00%;
-    }
-    50% {
-        background-position: 80% 80%;
-    }
-    100% {
-        background-position: 0 00%;
-    }
+html{
+    background: #ffffff linear-gradient(0deg, #FFE944, #ffffff,  #ffffff);
+    min-height: 100%;
 }
 
 
@@ -44,23 +26,25 @@ body {
     margin-right: 2.5%;
     margin-top: 50px;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-    padding: 10px;
 }
 
 #containera{
     border-radius: 3em;
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
+    padding: 5px;
 }
 
 #timetableButton {
     display: inline-block;
+    background-color: #fffae4;
     float: right;
     min-width: 150px;
     height: 100px;
     border: 1px solid #aaa;
     border-radius: 11em;
     margin-right: 2.5%;
+    margin-top: 15px;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
 }
  .material-symbols-outlined {
@@ -93,7 +77,7 @@ body {
 }
 
 #dateSelector{
-    font-family: 'PyeongChang-Bold', sans-serif;
+    font-family: 'PyeongChangPeace', sans-serif;
     display: inline-block;
     float: left;
     color: #444;
@@ -106,20 +90,21 @@ body {
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
     width: 75%;
     height: 100px;
+    margin-top: 15px;
 }
 
 header {
-    background-color: #fffae4;
+    box-shadow: rgba(0, 0, 0, 0.02) 5px 10px 20px;
+    background-color: #ffffff;
     color: #ffd500;
     text-align: center;
-    font-size: 7.0em;
-    font-weight: bold;
-    border-radius: 0.9em;
-    height: 300px;
-    line-height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-    margin: 5% 10% 5%;
+    height: 120px;
+    line-height: 120px;
     font-family: 'Pretendard', sans-serif;
+}
+
+#logo{
+    vertical-align: middle;
 }
 
 
@@ -165,8 +150,29 @@ tr th:first-child { border-left-style: solid; }
 h2 {
     font-size: 4.5em;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
+    margin: 0;
+    font-style: normal;
     color: #FDA200;
+}
+
+h3{
+    font-size: 8.5em;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    font-style: normal;
+    color: #FFD414;
+}
+
+h4{
+    font-size: 2.35em;
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    color: #4d3b00;
 }
 
 #myTable td{
@@ -174,3 +180,6 @@ h2 {
     font-size: 1.1em;
 }
 
+#dday{
+    font-weight: bold;
+}
