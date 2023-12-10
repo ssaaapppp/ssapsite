@@ -49,7 +49,6 @@ function initTimetable(seld) {
     const currentDay = daysOfWeek[currentDate.getDay()];
     document.getElementById('dateSelector').value = daysOfWeek[currentDate.getDay()];
     seld = currentDay;
-    const dateSelector = document.getElementById("dateSelector");
     const timetableTable = document.getElementById("timetableTable");
     timetableTable.innerHTML = "";
     switch (seld) {

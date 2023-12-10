@@ -8,7 +8,7 @@
 
 
 h2, h3, h4, h5, h6, p, table{
-    font-family: 'PyeongChang-Bold';
+    font-family: 'PyeongChang-Bold', sans-serif;
     margin: 0;
 }
 h1{
@@ -26,13 +26,13 @@ body {
 }
 @keyframes gradient {
     0% {
-        background-position: 0% 00%;
+        background-position: 0 00%;
     }
     50% {
         background-position: 80% 80%;
     }
     100% {
-        background-position: 0% 00%;
+        background-position: 0 00%;
     }
 }
 
@@ -93,6 +93,7 @@ body {
 }
 
 #dateSelector{
+    font-family: 'PyeongChang-Bold', sans-serif;
     display: inline-block;
     float: left;
     color: #444;
@@ -140,13 +141,12 @@ tr {
     color: white;
 }
 td {
-    border: solid 3px #000;
     background-color: #ffffff;
     border-style: none solid solid none;
     color: black;
 }
 th{
-    border: solid 0px #000;
+    border: solid 0 #000;
 }
 tr:first-child td:first-child { border-top-left-radius: 50px; }
 tr:first-child td:last-child { border-top-right-radius: 50px; }
