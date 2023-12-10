@@ -1,7 +1,18 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@font-face {
+    font-family: 'PyeongChang-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
-h1, h2, h3, h4, h5, h6, p, table{
-    font-family: 'Pretendard', sans-serif;
+
+h2, h3, h4, h5, h6, p, table{
+    font-family: 'PyeongChang-Bold';
+    margin: 0;
+}
+h1{
+    margin: 0;
 }
 
 body {
@@ -26,14 +37,20 @@ body {
 }
 
 
-#container{
+#containerb{
     border-radius: 3em;
-    background-color: #ffffff;
+    background-color: #FFF8C0;
     margin-left: 2.5%;
     margin-right: 2.5%;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
 }
 
+#containera{
+    border-radius: 3em;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
+    margin: 10px;
+}
 
 #timetableButton {
     display: inline-block;
@@ -99,7 +116,8 @@ header {
     height: 300px;
     line-height: 300px;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-    margin: 0% 10% 5%;
+    margin: 5% 10% 5%;
+    font-family: 'Pretendard', sans-serif;
 }
 
 
@@ -144,10 +162,14 @@ tr th:first-child { border-left-style: solid; }
 
 /*시간표 & 숙제수행평가*/
 h2 {
-    font-size: 5.5em;
+    font-size: 4.5em;
     text-align: center;
     font-weight: bold;
-    margin: 0;
-    padding: 0;
+    color: #FDA200;
+}
+
+#myTable td{
+    text-align: left;
+    font-size: 1.1em;
 }
 
