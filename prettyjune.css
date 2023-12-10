@@ -14,7 +14,7 @@ h1{
     margin: 0;
 }
 html{
-    background: #ffffff linear-gradient(0deg, #FFE944, #ffffff);
+    background: #ffffff linear-gradient(0deg, #FFE944, #ffffff,  #ffffff);
     height: 100%;
 }
 
@@ -26,13 +26,13 @@ html{
     margin-right: 2.5%;
     margin-top: 50px;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-    padding: 10px;
 }
 
 #containera{
     border-radius: 3em;
     background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
+    padding: 5px;
 }
 
 #timetableButton {
@@ -44,6 +44,7 @@ html{
     border: 1px solid #aaa;
     border-radius: 11em;
     margin-right: 2.5%;
+    margin-top: 15px;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
 }
  .material-symbols-outlined {
@@ -89,6 +90,7 @@ html{
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
     width: 75%;
     height: 100px;
+    margin-top: 15px;
 }
 
 header {
@@ -163,8 +165,21 @@ h3{
     color: #FFD414;
 }
 
+h4{
+    font-size: 2.35em;
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    color: #4d3b00;
+}
+
 #myTable td{
     text-align: left;
     font-size: 1.1em;
 }
 
+#dday{
+    font-weight: bold;
+}
