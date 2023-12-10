@@ -7,7 +7,7 @@
     <script src="Julyscript.js"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="prettyjune.css">
-    <!-- Google Tag Manager -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -32,44 +32,50 @@
         <h1 onClick="location.href='/'" style="cursor:pointer">1-5</h1>
     </header>
 	
-	<div id="container">
+	<div id="containerb">
         <section id="timetable">
             <h2>시간표</h2>
-            <select id="dateSelector" onchange="updateTimetable()"> <!-- 자바스크립트 불러와서 시간표 변경하기 -->
-                <option value="monday">월요일</option>
-                <option value="tuesday">화요일</option>
-                <option value="wednesday">수요일</option>
-                <option value="thursday">목요일</option>
-                <option value="friday">금요일</option>
-            </select>
-            <table id="timetableTable">
-            </table>
+            <div id="containera">
+                <select id="dateSelector" onchange="updateTimetable()"> <!-- 자바스크립트 불러와서 시간표 변경하기 -->
+                    <option value="monday">월요일</option>
+                    <option value="tuesday">화요일</option>
+                    <option value="wednesday">수요일</option>
+                    <option value="thursday">목요일</option>
+                    <option value="friday">금요일</option>
+                </select>
+                <button id="timetableButton" onclick="initTimetable()"><span style="font-size:70px;" class="material-symbols-outlined">today</span></button>
+                <table id="timetableTable">
+                </table>
+            </div>
         </section>
     </div>
 
-    <hr class="dashed"> <!-- divider -->
 
-   	<div id="container">
+   	<div id="containerb">
         <section id="task">
             <h2>숙제/수행평가</h2>
-            <table id="myTable"></table>
-    
-            <script>
-                fetch('tasktable.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('myTable').innerHTML = data;
-                    });
-            </script>
+            <div id="containera">
+                <table id="myTable"></table>
+                <script>
+                    fetch('tasktable.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('myTable').innerHTML = data;
+                        });
+                </script>
+            </div>
         </section>
 	</div>
             
     
-    <hr class="dashed"> <!-- divider -->
-        
+
+    <!--
     <section id="meal-menu">
         <div id="geup"></div>
+	    <iframe src="https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=bf9859dcd1014bfc98d4382689ebe8d1&ATPT_OFCDC_SC_CODE=D10&SD_SCHUL_CODE=7004180&MLSV_YMD=20231208" height="300" width="100%"></iframe>
     </section>
-
+    -->
+	<h1>방학까지:</h1>
+    <h2 id="remain-time"></h2>
 </body>
 </html>

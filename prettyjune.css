@@ -1,60 +1,110 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@font-face {
+    font-family: 'PyeongChang-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
-h1, h2, h3, h4, h5, h6, p, table{
-    font-family: 'Pretendard', sans-serif;
+
+h2, h3, h4, h5, h6, p, table{
+    font-family: 'PyeongChang-Bold', sans-serif;
+    margin: 0;
+}
+h1{
+    margin: 0;
 }
 
 body {
-    background-color: #ffffff;
     color: #444444;
-    margin: 0;
-    padding: 0;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     height: auto;
-    background: linear-gradient(-10deg,#FFE944,#ffffff );
+    background: #ffffff linear-gradient(-10deg, #FFE944, #ffffff);
     animation: gradient 40s ease infinite;
     background-size: 500% 500%;
 }
-
 @keyframes gradient {
     0% {
-        background-position: 0% 00%;
+        background-position: 0 00%;
     }
     50% {
         background-position: 80% 80%;
     }
     100% {
-        background-position: 0% 00%;
+        background-position: 0 00%;
     }
 }
 
 
-/*구분선*/
-hr.dashed {
-    border-top: 3px solid rgba(255, 174, 0, 0.18);
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-#container{
+#containerb{
     border-radius: 3em;
-    background-color: #fffae4;
+    background-color: #FFF8C0;
     margin-left: 2.5%;
     margin-right: 2.5%;
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
+    padding: 10px;
+}
+
+#containera{
+    border-radius: 3em;
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
 }
 
+#timetableButton {
+    display: inline-block;
+    float: right;
+    min-width: 150px;
+    height: 100px;
+    border: 1px solid #aaa;
+    border-radius: 11em;
+    margin-right: 2.5%;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+}
+ .material-symbols-outlined {
+     font-size: 480px;
+     font-variation-settings:
+             'FILL' 0,
+             'wght' 400,
+             'GRAD' 0,
+             'opsz' 24
+ }
 
-select {
+.material-symbols-outlined:active {
+    animation:loadanimate 0.4s ;
+}
+@keyframes loadanimate {
+    0% {
+        font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+    }
+    100% {
+        font-variation-settings:
+                'FILL' 10,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+    }
+}
+
+#dateSelector{
+    font-family: 'PyeongChang-Bold', sans-serif;
+    display: inline-block;
+    float: left;
     color: #444;
     background-color: #fff;
     padding: 0.6em 1.4em 0.5em 0.8em;
     margin-left: 2.5%;
-    margin-right: 2.5%;
-    font-size: 3em;
+    font-size: 2.5em;
     border: 1px solid #aaa;
     border-radius: 11em;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-    width: 95%;
+    width: 75%;
     height: 100px;
 }
 
@@ -68,15 +118,17 @@ header {
     height: 300px;
     line-height: 300px;
     box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-    margin: 5% 10% ;
+    margin: 5% 10% 5%;
+    font-family: 'Pretendard', sans-serif;
 }
 
+
+/*테이블*/
 table, tr, td {
     text-align: center;
     height: 50px;
     padding: 10px;
 }
-
 table {
     font-size: 2.2em;
     border-collapse: separate;
@@ -84,49 +136,41 @@ table {
     width: 100%;
     margin: auto;
 }
-
 tr {
     background-color: #444444;
     color: white;
 }
 td {
-    border: solid 3px #000;
     background-color: #ffffff;
     border-style: none solid solid none;
     color: black;
 }
 th{
-	border-style: none solid solid none;
-    border: solid 0px #000;
+    border: solid 0 #000;
 }
-
 tr:first-child td:first-child { border-top-left-radius: 50px; }
 tr:first-child td:last-child { border-top-right-radius: 50px; }
-
 tr:last-child td:first-child { border-bottom-left-radius: 50px; }
 tr:last-child td:last-child { border-bottom-right-radius: 50px; }
-
 tr:first-child td { border-top-style: solid; }
 tr td:first-child { border-left-style: solid; }
-
-
 tr:first-child th:first-child { border-top-left-radius: 50px; }
 tr:first-child th:last-child { border-top-right-radius: 50px; }
-
 tr:last-child th:first-child { border-bottom-left-radius: 50px; }
 tr:last-child th:last-child { border-bottom-right-radius: 50px; }
-
 tr:first-child th { border-top-style: solid; }
 tr th:first-child { border-left-style: solid; }
 
-
-
-
 /*시간표 & 숙제수행평가*/
 h2 {
-    font-size: 5.5em;
+    font-size: 4.5em;
     text-align: center;
     font-weight: bold;
-    margin: 0;
-    padding: 0;
+    color: #FDA200;
 }
+
+#myTable td{
+    text-align: left;
+    font-size: 1.1em;
+}
+
