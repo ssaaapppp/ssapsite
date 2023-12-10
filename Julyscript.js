@@ -44,6 +44,11 @@ function updateTimetable(seld) {
 }
 
 function initTimetable(seld) {
+    const currentDate = new Date();
+    const daysOfWeek = ["monday", "monday", "tuesday", "wednesday", "thursday", "friday", "monday"];
+    const currentDay = daysOfWeek[currentDate.getDay()];
+    document.getElementById('dateSelector').value = daysOfWeek[currentDate.getDay()];
+    seld = currentDay;
     const dateSelector = document.getElementById("dateSelector");
     const timetableTable = document.getElementById("timetableTable");
     timetableTable.innerHTML = "";
@@ -90,10 +95,9 @@ function meal() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    diffDay();
     meal();
     const currentDate = new Date();
-    const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    const daysOfWeek = ["monday", "monday", "tuesday", "wednesday", "thursday", "friday", "monday"];
     const currentDay = daysOfWeek[currentDate.getDay()];
     document.getElementById('dateSelector').value = daysOfWeek[currentDate.getDay()];
     initTimetable(currentDay);
@@ -101,22 +105,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /***************/
 
-
-const remainTime = document.querySelector("#remain-time");
-
-function diffDay() {
-    const masTime = new Date("2023-12-22");
-    const todayTime = new Date();
-    
-    const diff = masTime - todayTime;
-    
-    const diffDay = Math.floor(diff / (1000*60*60*24));
-    const diffHour = Math.floor((diff / (1000*60*60)) % 24);
-    const diffMin = Math.floor((diff / (1000*60)) % 60);
-    const diffSec = Math.floor(diff / 1000 % 60);
-    
-    remainTime.innerText = `${diffDay}일 ${diffHour}시간 ${diffMin}분 ${diffSec}초`;
-}
-
-diffDay();
-setInterval(diffDay, 1000);
