@@ -70,6 +70,8 @@ function initTimetable(seld) {
     }
 }
 
+
+
 function meal() {
     let url = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=bf9859dcd1014bfc98d4382689ebe8d1&ATPT_OFCDC_SC_CODE=D10&SD_SCHUL_CODE=7004180&MLSV_YMD=" + 20231201;
     fetch(url, {
@@ -105,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function dday() {
     var x = setInterval(function() {
-    const dday = new Date("2023-12-22");
+    const dday = new Date("2024-03-02");
     const now = new Date();
     const gap = dday.getTime() - now.getTime();
     const day = Math.floor(gap / (1000 * 60 * 60 * 24));

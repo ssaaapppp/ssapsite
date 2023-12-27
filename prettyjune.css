@@ -1,9 +1,13 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @font-face {
     font-family: "PyeongChangPeace";
-    src: url("src/PyeongChang-Regular.ttf") format("truetype");
+    src: url("src/PyeongChang-Regular.woff2") format("woff2");
     font-weight: normal;
 }
+
+
+
+
 
 
 h2, h3, h4, h5, h6, p, table{
