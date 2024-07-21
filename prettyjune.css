@@ -1,37 +1,38 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    padding: 0;
 }
 
 .container {
-    text-align: center;
+    display: flex;
+    height: 100vh; /* 화면 전체 높이로 설정 */
 }
 
-video {
-    width: 80%;
-    max-width: 600px;
-    margin-top: 20px;
+.half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
-.controls {
-    margin-top: 10px;
+.left {
+    background-color: #f0f0f0; /* 왼쪽 영역 배경색 */
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+.right {
+    background-color: #e0e0e0; /* 오른쪽 영역 배경색 */
 }
 
-button:hover {
-    background-color: #0056b3;
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .half {
+        width: 100%;
+    }
 }
