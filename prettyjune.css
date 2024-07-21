@@ -1,189 +1,37 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-@font-face {
-    font-family: "PyeongChangPeace";
-    src: url("src/PyeongChang-Regular.woff2") format("woff2");
-    font-weight: normal;
-}
-
-
-
-
-
-
-h2, h3, h4, h5, h6, p, table{
-    font-family: 'PyeongChangPeace', sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-}
-h1{
-    margin: 0;
-}
-html{
-    background: #ffffff linear-gradient(0deg, #FFE944, #ffffff,  #ffffff);
-    min-height: 100%;
+    background-color: #f0f0f0;
 }
 
-
-#containerb{
-    border-radius: 3em;
-    background-color: #FFF8C0;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    margin-top: 50px;
-    box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-}
-
-#containera{
-    border-radius: 3em;
-    background-color: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.3) 5px 10px 20px;
-    padding: 5px;
-}
-
-#timetableButton {
-    display: inline-block;
-    background-color: #fffae4;
-    float: right;
-    min-width: 150px;
-    height: 100px;
-    border: 1px solid #aaa;
-    border-radius: 11em;
-    margin-right: 2.5%;
-    margin-top: 15px;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-}
- .material-symbols-outlined {
-     font-size: 480px;
-     font-variation-settings:
-             'FILL' 0,
-             'wght' 400,
-             'GRAD' 0,
-             'opsz' 24
- }
-
-.material-symbols-outlined:active {
-    animation:loadanimate 0.4s ;
-}
-@keyframes loadanimate {
-    0% {
-        font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24;
-    }
-    100% {
-        font-variation-settings:
-                'FILL' 10,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24;
-    }
-}
-
-#dateSelector{
-    font-family: 'PyeongChangPeace', sans-serif;
-    display: inline-block;
-    float: left;
-    color: #444;
-    background-color: #fff;
-    padding: 0.6em 1.4em 0.5em 0.8em;
-    margin-left: 2.5%;
-    font-size: 2.5em;
-    border: 1px solid #aaa;
-    border-radius: 11em;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-    width: 75%;
-    height: 100px;
-    margin-top: 15px;
-}
-
-header {
-    box-shadow: rgba(0, 0, 0, 0.02) 5px 10px 20px;
-    background-color: #ffffff;
-    color: #ffd500;
+.container {
     text-align: center;
-    height: 120px;
-    line-height: 120px;
-    font-family: 'Pretendard', sans-serif;
 }
 
-#logo{
-    vertical-align: middle;
+video {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
 }
 
+.controls {
+    margin-top: 10px;
+}
 
-/*테이블*/
-table, tr, td {
-    text-align: center;
-    height: 50px;
-    padding: 10px;
-}
-table {
-    font-size: 2.2em;
-    border-collapse: separate;
-    border-spacing: 0;
-    width: 100%;
-    margin: auto;
-}
-tr {
-    background-color: #444444;
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
     color: white;
-}
-td {
-    background-color: #ffffff;
-    border-style: none solid solid none;
-    color: black;
-}
-th{
-    border: solid 0 #000;
-}
-tr:first-child td:first-child { border-top-left-radius: 50px; }
-tr:first-child td:last-child { border-top-right-radius: 50px; }
-tr:last-child td:first-child { border-bottom-left-radius: 50px; }
-tr:last-child td:last-child { border-bottom-right-radius: 50px; }
-tr:first-child td { border-top-style: solid; }
-tr td:first-child { border-left-style: solid; }
-tr:first-child th:first-child { border-top-left-radius: 50px; }
-tr:first-child th:last-child { border-top-right-radius: 50px; }
-tr:last-child th:first-child { border-bottom-left-radius: 50px; }
-tr:last-child th:last-child { border-bottom-right-radius: 50px; }
-tr:first-child th { border-top-style: solid; }
-tr th:first-child { border-left-style: solid; }
-
-/*시간표 & 숙제수행평가*/
-h2 {
-    font-size: 4.5em;
-    text-align: center;
-    font-weight: normal;
-    margin: 0;
-    font-style: normal;
-    color: #FDA200;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-h3{
-    font-size: 8.5em;
-    text-align: center;
-    font-weight: normal;
-    margin: 0;
-    font-style: normal;
-    color: #FFD414;
-}
-
-h4{
-    font-size: 2.35em;
-    margin-right: 15%;
-    margin-left: 15%;
-    text-align: center;
-    font-weight: normal;
-    font-style: normal;
-    color: #4d3b00;
-}
-
-#myTable td{
-    text-align: left;
-    font-size: 1.1em;
-}
-
-#dday{
-    font-weight: bold;
+button:hover {
+    background-color: #0056b3;
 }
