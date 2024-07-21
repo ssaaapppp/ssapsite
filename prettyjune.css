@@ -17,6 +17,7 @@ body {
     width: 50%;
     box-sizing: border-box;
     padding: 20px;
+    cursor: pointer; /* 클릭 가능하도록 포인터 커서 추가 */
 }
 
 .left {
