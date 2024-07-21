@@ -3,16 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>왼쪽과 오른쪽 숫자 표시</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>영상 제작 목적 선택</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="left">
-            <p>1</p>
-        </div>
-        <div class="right">
-            <p>2</p>
+        <h1>영상을 제작하려는 목적은 무엇인가요?</h1>
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" name="videoPurpose" value="youtube">
+                유튜브 영상
+            </label>
+            <label>
+                <input type="checkbox" name="videoPurpose" value="lecture">
+                강의 영상
+            </label>
         </div>
     </div>
 </body>
