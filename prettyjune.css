@@ -1,39 +1,43 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
 .container {
     display: flex;
-    height: 100vh; /* 화면 전체 높이로 설정 */
+    width: 80%;
+    height: 60%;
+    position: relative;
 }
 
-.half {
+.split-left, .split-right {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+.split-left {
+    border-right: 2px solid #333;
+    background-color: #fff;
+}
+
+.split-right {
+    background-color: #f0f0f0;
+}
+
+.divider {
+    width: 2px;
+    background-color: #333;
     height: 100%;
-    width: 50%;
-    box-sizing: border-box;
-    padding: 20px;
-    cursor: pointer; /* 클릭 가능하도록 포인터 커서 추가 */
-}
-
-.left {
-    background-color: #f0f0f0; /* 왼쪽 영역 배경색 */
-}
-
-.right {
-    background-color: #e0e0e0; /* 오른쪽 영역 배경색 */
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .half {
-        width: 100%;
-    }
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
