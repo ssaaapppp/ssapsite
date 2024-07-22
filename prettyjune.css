@@ -1,26 +1,40 @@
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
-
-.button-container-small {
-    display: flex;
-    gap: 10px;
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
-
-.button-container-small button {
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+.button-container button {
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px 15px; /* Adjust padding to make buttons smaller */
-    font-size: 14px; /* Adjust font size for smaller buttons */
+    padding: 15px 25px;
+    font-size: 16px;
+    margin: 10px;
     cursor: pointer;
     border-radius: 5px;
 }
-
-.button-container-small button:hover {
+.button-container button:hover {
     background-color: #0056b3;
+}
+.content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
