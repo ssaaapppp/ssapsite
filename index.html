@@ -1,48 +1,11 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영상 제작 목적 선택</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .checkbox-group {
-            margin: 10px 0;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        input[type="checkbox"] {
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>영상을 제작하려는 목적은 무엇인가요?</h1>
-        <div class="checkbox-group">
-            <label>
-                <input type="checkbox" name="videoPurpose" value="youtube">
-                유튜브 영상
-            </label>
-            <label>
-                <input type="checkbox" name="videoPurpose" value="lecture">
-                강의 영상
-            </label>
+<header>
+    <div class="header-content">
+        <h1>저희 회사에 오신 것을 환영합니다!</h1>
+        <div class="button-container-small">
+            <button onclick="showContent('about')">회사 소개</button>
+            <button onclick="showContent('faq')">자주 묻는 질문</button>
+            <button onclick="showContent('quote')">간편견적서</button>
+            <button onclick="showContent('portfolio')">작품</button>
         </div>
     </div>
-</body>
-</html>
+</header>
