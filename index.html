@@ -32,16 +32,16 @@
             gap: 10px;
             margin-top: 10px;
         }
-        .button-container-small button {
+        .button-container-small a {
             background-color: #007BFF;
             color: #fff;
-            border: none;
+            text-decoration: none;
             padding: 10px 15px;
             font-size: 14px;
             cursor: pointer;
             border-radius: 5px;
         }
-        .button-container-small button:hover {
+        .button-container-small a:hover {
             background-color: #0056b3;
         }
         .content {
@@ -57,10 +57,10 @@
         <div class="header-content">
             <h1>저희 회사에 오신 것을 환영합니다!</h1>
             <div class="button-container-small">
-                <button onclick="showContent('about')">회사 소개</button>
-                <button onclick="showContent('faq')">자주 묻는 질문</button>
-                <button onclick="showContent('quote')">간편견적서</button>
-                <button onclick="showContent('portfolio')">작품</button>
+                <a href="about.html">회사 소개</a>
+                <a href="faq.html">자주 묻는 질문</a>
+                <a href="quote.html">간편견적서</a>
+                <a href="portfolio.html">작품</a>
             </div>
         </div>
     </header>
@@ -70,27 +70,5 @@
             <p id="content-text">여기서 콘텐츠가 표시됩니다. 버튼을 클릭하면 해당 콘텐츠가 여기에 나타납니다.</p>
         </div>
     </div>
-
-    <script>
-        function showContent(section) {
-            const contentDiv = document.getElementById('content-text');
-            switch(section) {
-                case 'about':
-                    contentDiv.innerHTML = '<h2>회사 소개</h2><p>로고를 제작 해드립니다!</p>';
-                    break;
-                case 'faq':
-                    contentDiv.innerHTML = '<h2>자주 묻는 질문</h2><p>Q & A</p>';
-                    break;
-                case 'quote':
-                    contentDiv.innerHTML = '<h2>간편견적서</h2><p>여기서 간편견적서 내용을 작성하세요 또는 다음 페이지로 넘기기</p>';
-                    break;
-                case 'portfolio':
-                    contentDiv.innerHTML = '<h2>작품</h2><p>작품 미리 보여주기</p>';
-                    break;
-                default:
-                    contentDiv.innerHTML = '<p>여기서 콘텐츠가 표시됩니다. 버튼을 클릭하면 해당 콘텐츠가 여기에 나타납니다.</p>';
-            }
-        }
-    </script>
 </body>
 </html>
