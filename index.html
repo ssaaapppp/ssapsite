@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회사 웹사이트2</title>
+    <title>회사 웹사이트</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,7 +63,7 @@
         .social-icons {
             position: fixed;
             bottom: 20px;
-            left: 20px;
+            right: 20px; /* Adjust this for spacing from the right edge */
         }
         .social-icons a {
             display: block;
@@ -72,12 +72,13 @@
             background: #333;
             border-radius: 50%;
             margin-bottom: 10px;
+            text-align: center;
+            line-height: 40px; /* Center icon vertically */
         }
         .social-icons img {
-            width: 100%;
-            height: 100%;
+            width: 20px; /* Adjust size as needed */
+            height: 20px;
             object-fit: cover;
-            border-radius: 50%;
         }
         .social-icons a:hover {
             background: #555;
@@ -87,7 +88,7 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="images/pikkaro-logo.png" alt="회사 로고">
+            <img src="img/pikalogo.png" alt="회사 로고">
             <h1>저희 회사에 오신 것을 환영합니다!</h1>
         </div>
         <div class="button-container-small">
@@ -106,8 +107,8 @@
 
     <!-- Social Media Icons -->
     <div class="social-icons">
-        <a href="https://www.instagram.com/ppikkalo_official?igsh=MTR1bjk0NHI4MHZybA==">
-            <img src="img/insta.png" alt="인스타">
+        <a href="https://www.instagram.com/yourprofile" target="_blank">
+            <img src="img/insta.png" alt="인스타 로고">
         </a>
     </div>
 </body>
