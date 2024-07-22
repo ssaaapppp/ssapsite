@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회사 소개</title>
+    <title>회사 웹사이트</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,20 +22,26 @@
             padding: 20px 0;
             text-align: center;
         }
-        nav {
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button-container-small {
+            display: flex;
+            gap: 10px;
             margin-top: 10px;
         }
-        nav a {
+        .button-container-small a {
             background-color: #007BFF;
             color: #fff;
             text-decoration: none;
             padding: 10px 15px;
             font-size: 14px;
-            margin: 0 5px;
             cursor: pointer;
             border-radius: 5px;
         }
-        nav a:hover {
+        .button-container-small a:hover {
             background-color: #0056b3;
         }
         .content {
@@ -43,23 +49,25 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>회사 소개</h1>
-        <nav>
-            <a href="index.html">홈으로</a>
-            <a href="faq.html">자주 묻는 질문</a>
-            <a href="quote.html">간편견적서</a>
-            <a href="portfolio.html">작품</a>
-        </nav>
+        <div class="header-content">
+            <h1>저희 회사에 오신 것을 환영합니다!</h1>
+            <div class="button-container-small">
+                <a href="introduce/introduce.html">회사 소개</a>
+                <a href="qna/qna.html">자주 묻는 질문</a>
+                <a href="simple/simple.html">간편견적서</a>
+                <a href="work/work.html">작품</a>
+            </div>
+        </div>
     </header>
+
     <div class="container">
         <div class="content">
-            <p>회사 소개 페이지 내용입니다.</p>
+            <p id="content-text">여기서 콘텐츠가 표시됩니다. 버튼을 클릭하면 해당 콘텐츠가 여기에 나타납니다.</p>
         </div>
     </div>
 </body>
