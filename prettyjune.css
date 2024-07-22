@@ -1,1 +1,26 @@
 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.button-container-small {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container-small button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px; /* Adjust padding to make buttons smaller */
+    font-size: 14px; /* Adjust font size for smaller buttons */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-container-small button:hover {
+    background-color: #0056b3;
+}
