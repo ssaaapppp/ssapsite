@@ -21,6 +21,7 @@
             color: #fff;
             padding: 20px 0;
             display: flex;
+            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
             align-items: center;
             justify-content: space-between;
         }
@@ -28,6 +29,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
         }
         .header-content img {
             height: 50px; /* Adjust based on your image size */
@@ -40,6 +42,7 @@
         }
         .button-container-small {
             display: flex;
+            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
             gap: 10px;
         }
         .button-container-small a {
@@ -82,6 +85,56 @@
         }
         .social-icons a:hover {
             background: transparent; /* Ensure no background on hover */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 20px;
+            }
+            .header-content img {
+                height: 40px;
+            }
+            .button-container-small a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            .header-content {
+                justify-content: center;
+                width: 100%;
+            }
+            .header-content img {
+                height: 30px;
+            }
+            .header-content h1 {
+                font-size: 18px;
+                text-align: center;
+            }
+            .button-container-small {
+                justify-content: center;
+                width: 100%;
+                padding: 10px 0;
+            }
+            .button-container-small a {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+            .social-icons a {
+                width: 60px;
+                height: 60px;
+            }
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
