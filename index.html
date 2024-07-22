@@ -20,12 +20,24 @@
             background: #333;
             color: #fff;
             padding: 20px 0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
         .header-content {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            gap: 20px;
+        }
+        .header-content img {
+            height: 50px; /* Adjust based on your image size */
+            width: auto;
+            border-radius: 5px;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 24px;
         }
         .button-container-small {
             display: flex;
@@ -55,13 +67,14 @@
 <body>
     <header>
         <div class="header-content">
+            <img src="images/삐까로 로고.png" alt="회사 로고">
             <h1>저희 회사에 오신 것을 환영합니다!</h1>
-            <div class="button-container-small">
-                <a href="introduce/introduce.html">회사 소개</a>
-                <a href="qna/qna.html">자주 묻는 질문</a>
-                <a href="simple/simple.html">간편견적서</a>
-                <a href="work/work.html">작품</a>
-            </div>
+        </div>
+        <div class="button-container-small">
+            <a href="introduce/introduce.html">회사 소개</a>
+            <a href="qna/qna.html">자주 묻는 질문</a>
+            <a href="simple/simple.html">간편견적서</a>
+            <a href="work/work.html">작품</a>
         </div>
     </header>
 
