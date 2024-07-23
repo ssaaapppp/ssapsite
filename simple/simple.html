@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>간편 견적서1</title>
+    <title>간편 견적서</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,17 +85,13 @@
     </form>
 
     <script>
-        let currentQuestion = '';
-
         function showNextQuestion(nextQuestionId) {
-            const current = document.querySelector('.question:not(.hidden)');
+            const current = document.querySelector('.question:not(.hidden):not(.inactive)');
             if (current) {
                 current.classList.add('inactive'); // 현재 질문을 흐리게 함
-                current.classList.add('hidden');   // 현재 질문을 숨김
             }
             const next = document.getElementById(nextQuestionId);
             next.classList.remove('hidden'); // 다음 질문을 보이게 함
-            next.classList.remove('inactive');
             calculateTotal();
         }
 
@@ -104,7 +100,7 @@
             if (imageInLogoSelect.value === '3000') {
                 showNextQuestion('image-description-container');
             } else {
-                showNextQuestion('total');
+                calculateTotal(); // 총 가격 계산하기 위해 호출
             }
         }
 
