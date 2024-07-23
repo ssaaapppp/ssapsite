@@ -1,101 +1,142 @@
-    <div class="question step step-2 next-step">
-        <label for="deadline">로고 제작 원하는 기한이 있나요? (비용이 달라질 수 있음, 퀄리티가 달라질 수 있음)</label><br>
-        <select id="deadline" name="deadline">
-            <option value="6000">가능한 빨리 (+6,000원)</option>
-            <option value="4000">보통 (3~5일) (+4,000원)</option>
-            <option value="2000">그렇게 빨리 필요하지는 않다 (+2,000원)</option>
-        </select>
-        <button type="button" onclick="nextStep(3)">다음</button>
-    </div>
-
-    <div class="question step step-3 next-step">
-        <label for="logo-style">어떤 이미지의 로고를 원하십니까? (기본 3,000원)</label><br>
-        <select id="logo-style" name="logo-style">
-            <option value="3000">깔끔함</option>
-            <option value="3000">레트로</option>
-            <option value="3000">세련됨</option>
-            <option value="3000">기타</option>
-        </select>
-        <input type="text" id="logo-style-other" name="logo-style-other" placeholder="기타 작성란" style="display:none;">
-        <button type="button" onclick="nextStep(4)">다음</button>
-    </div>
-
-    <div class="question step step-4 next-step">
-        <label for="image-in-logo">로고에 이미지가 들어가야합니까?</label><br>
-        <select id="image-in-logo" name="image-in-logo">
-            <option value="3000">예 (+3,000원)</option>
-            <option value="0">아니오 (0원)</option>
-        </select>
-        <button type="button" onclick="nextStep(5)">다음</button>
-    </div>
-
-    <div class="question step step-5 next-step" id="image-description-container" style="display:none;">
-        <label for="image-description">로고에 어떤 이미지가 들어가야합니까?</label><br>
-        <input type="text" id="image-description" name="image-description" placeholder="작성란">
-    </div>
-
-    <div class="total">
-        총 가격: <span id="total-price">14,000원</span>
-    </div>
-</form>
-
-<script>
-    const form = document.getElementById('design-form');
-    const designTypeSelect = document.getElementById('design-type');
-    const designTypeOther = document.getElementById('design-type-other');
-    const logoStyleSelect = document.getElementById('logo-style');
-    const logoStyleOther = document.getElementById('logo-style-other');
-    const imageInLogoSelect = document.getElementById('image-in-logo');
-    const imageDescriptionContainer = document.getElementById('image-description-container');
-    const totalPriceSpan = document.getElementById('total-price');
-
-    function nextStep(step) {
-        const currentStep = document.querySelector('.step.visible');
-        currentStep.classList.remove('visible');
-        currentStep.classList.add('next-step');
-        
-        const nextStep = document.querySelector(`.step-${step}`);
-        nextStep.classList.remove('next-step');
-        nextStep.classList.add('visible');
-    }
-
-    function calculateTotal() {
-        let total = 0;
-        total += parseInt(designTypeSelect.value);
-        total += parseInt(document.getElementById('deadline').value);
-        total += parseInt(logoStyleSelect.value);
-        total += parseInt(imageInLogoSelect.value);
-        totalPriceSpan.textContent = `${total}원`;
-    }
-
-    designTypeSelect.addEventListener('change', function() {
-        if (designTypeSelect.value === '9000') {
-            designTypeOther.style.display = 'none';
-        } else {
-            designTypeOther.style.display = 'block';
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간편 견적서</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-        calculateTotal();
-    });
-
-    logoStyleSelect.addEventListener('change', function() {
-        if (logoStyleSelect.value === '3000') {
-            logoStyleOther.style.display = 'none';
-        } else {
-            logoStyleOther.style.display = 'block';
+        .question {
+            margin-top: 20px;
+            display: none; /* 처음에는 모든 질문을 숨깁니다 */
         }
-        calculateTotal();
-    });
-
-    imageInLogoSelect.addEventListener('change', function() {
-        if (imageInLogoSelect.value === '3000') {
-            imageDescriptionContainer.style.display = 'block';
-        } else {
-            imageDescriptionContainer.style.display = 'none';
+        .question.active {
+            display: block; /* 활성화된 질문만 표시 */
         }
-        calculateTotal();
-    });
+        .total {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>간편 견적서</h1>
+    <form id="design-form">
+        <div class="question" id="design-type-question">
+            <label for="design-type">어떤 디자인을 하실건가요? (기본 9,000원)</label><br>
+            <select id="design-type" name="design-type">
+                <option value="9000">로고디자인</option>
+                <option value="9000">명함디자인</option>
+                <option value="9000">티셔츠 그래픽 디자인</option>
+                <option value="9000">기타</option>
+            </select>
+            <input type="text" id="design-type-other" name="design-type-other" placeholder="기타 작성란" style="display:none;">
+            <button type="button" onclick="showNextQuestion('deadline-question')">다음</button>
+        </div>
 
-    form.addEventListener('change', calculateTotal);
+        <div class="question" id="deadline-question">
+            <label for="deadline">로고 제작 원하는 기한이 있나요? (비용이 달라질 수 있음, 퀄리티가 달라질 수 있음)</label><br>
+            <select id="deadline" name="deadline">
+                <option value="6000">가능한 빨리 (+6,000원)</option>
+                <option value="4000">보통 (3~5일) (+4,000원)</option>
+                <option value="2000">그렇게 빨리 필요하지는 않다 (+2,000원)</option>
+            </select>
+            <button type="button" onclick="showNextQuestion('logo-style-question')">다음</button>
+        </div>
 
-    calculateTotal();
-</script>
+        <div class="question" id="logo-style-question">
+            <label for="logo-style">어떤 이미지의 로고를 원하십니까? (기본 3,000원)</label><br>
+            <select id="logo-style" name="logo-style">
+                <option value="3000">깔끔함</option>
+                <option value="3000">레트로</option>
+                <option value="3000">세련됨</option>
+                <option value="3000">기타</option>
+            </select>
+            <input type="text" id="logo-style-other" name="logo-style-other" placeholder="기타 작성란" style="display:none;">
+            <button type="button" onclick="showNextQuestion('image-in-logo-question')">다음</button>
+        </div>
+
+        <div class="question" id="image-in-logo-question">
+            <label for="image-in-logo">로고에 이미지가 들어가야합니까?</label><br>
+            <select id="image-in-logo" name="image-in-logo">
+                <option value="3000">예 (+3,000원)</option>
+                <option value="0">아니오 (0원)</option>
+            </select>
+            <button type="button" onclick="handleImageInLogo()">다음</button>
+        </div>
+
+        <div class="question" id="image-description-container">
+            <label for="image-description">로고에 어떤 이미지가 들어가야합니까?</label><br>
+            <input type="text" id="image-description" name="image-description" placeholder="작성란">
+            <button type="button" onclick="calculateTotal()">계산하기</button>
+        </div>
+
+        <div class="total">
+            총 가격: <span id="total-price">14,000원</span>
+        </div>
+    </form>
+
+    <script>
+        let currentQuestion = '';
+
+        function showNextQuestion(nextQuestionId) {
+            document.querySelector('.question.active')?.classList.remove('active');
+            document.getElementById(nextQuestionId).classList.add('active');
+            calculateTotal();
+        }
+
+        function handleImageInLogo() {
+            const imageInLogoSelect = document.getElementById('image-in-logo');
+            if (imageInLogoSelect.value === '3000') {
+                showNextQuestion('image-description-container');
+            } else {
+                showNextQuestion('total');
+            }
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            total += parseInt(document.getElementById('design-type').value || 0);
+            total += parseInt(document.getElementById('deadline').value || 0);
+            total += parseInt(document.getElementById('logo-style').value || 0);
+            total += parseInt(document.getElementById('image-in-logo').value || 0);
+            document.getElementById('total-price').textContent = `${total}원`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('design-type-question').classList.add('active');
+        });
+
+        document.getElementById('design-type').addEventListener('change', function() {
+            if (this.value === '9000') {
+                document.getElementById('design-type-other').style.display = 'none';
+            } else {
+                document.getElementById('design-type-other').style.display = 'block';
+            }
+            calculateTotal();
+        });
+
+        document.getElementById('logo-style').addEventListener('change', function() {
+            if (this.value === '3000') {
+                document.getElementById('logo-style-other').style.display = 'none';
+            } else {
+                document.getElementById('logo-style-other').style.display = 'block';
+            }
+            calculateTotal();
+        });
+
+        document.getElementById('image-in-logo').addEventListener('change', function() {
+            if (this.value === '3000') {
+                document.getElementById('image-description-container').style.display = 'block';
+            } else {
+                document.getElementById('image-description-container').style.display = 'none';
+            }
+            calculateTotal();
+        });
+    </script>
+</body>
+</html>
