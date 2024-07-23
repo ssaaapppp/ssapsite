@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삐까로 로고 - 회사 소개</title>
+    <style>
+        /* 스타일은 원래 페이지의 스타일과 동일하게 유지합니다. */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .header-content img {
+            height: 50px;
+            width: auto;
+            border-radius: 5px;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .button-container-small {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .button-container-small a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 15px;
+            background-color: transparent;
+        }
+        .button-container-small a:hover {
+            color: #007BFF;
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .social-icons a {
+            display: block;
+            width: 80px;
+            height: 80px;
+            background: transparent;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        .social-icons a:hover {
+            background: transparent;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 20px;
+            }
+            .header-content img {
+                height: 40px;
+            }
+            .button-container-small a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            .header-content {
+                justify-content: center;
+                width: 100%;
+            }
+            .header-content img {
+                height: 30px;
+            }
+            .header-content h1 {
+                font-size: 18px;
+                text-align: center;
+            }
+            .button-container-small {
+                justify-content: center;
+                width: 100%;
+                padding: 10px 0;
+            }
+            .button-container-small a {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+            .social-icons a {
+                width: 60px;
+                height: 60px;
+            }
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../img/pikalogo.png" alt="회사 로고">
+            <h1>삐까로 로고에 오신 것을 환영합니다!</h1>
+        </div>
+        <div class="button-container-small">
+            <a href="../index.html">홈으로</a> <!-- 원래 페이지로 돌아가는 링크 -->
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>회사 소개</h2>
+        <!-- 내용을 추가하세요 -->
+        <p>여기에 회사 소개 내용을 추가하세요.</p>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/ppikkalo_official?igsh=MTR1bjk0NHI4MHZybA==" target="_blank">
+            <img src="../img/insta.png" alt="인스타 로고">
+        </a>
+    </div>
+</body>
+</html>
