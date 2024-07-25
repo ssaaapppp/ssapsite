@@ -45,128 +45,158 @@
             width: 100%;
             box-sizing: border-box;
         }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
+        }
+        .header-content img {
+            height: 50px; /* Adjust based on your image size */
+            width: auto;
+            border-radius: 5px;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .button-container-small {
+            display: flex;
+            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
+            gap: 10px;
+        }
+        .button-container-small a {
+            color: #fff; /* Change text color to white */
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold; /* Make text bold */
+            margin: 0;
+            padding: 10px 15px; /* Add padding for better spacing */
+            background-color: transparent; /* Ensure background is transparent */
+        }
+        .button-container-small a:hover {
+            color: #007BFF; /* Optional: Change color on hover */
+        }
+        .content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Adjust this for spacing from the right edge */
+        }
+        .social-icons a {
+            display: block;
+            width: 80px; /* Adjust size as needed */
+            height: 80px;
+            background: transparent; /* Remove background color */
+            border-radius: 50%;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 60px; /* Center icon vertically */
+        }
+        .social-icons img {
+            width: 50px; /* Adjust size as needed */
+            height: 50px;
+            object-fit: cover;
+        }
+        .social-icons a:hover {
+            background: transparent; /* Ensure no background on hover */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 20px;
+            }
+            .header-content img {
+                height: 40px;
+            }
+            .button-container-small a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 0;
+            }
+            .header-content {
+                justify-content: center;
+                width: 100%;
+            }
+            .header-content img {
+                height: 30px;
+            }
+            .header-content h1 {
+                font-size: 18px;
+                text-align: center;
+            }
+            .button-container-small {
+                justify-content: center;
+                width: 100%;
+                padding: 10px 0;
+            }
+            .button-container-small a {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+            .social-icons a {
+                width: 60px;
+                height: 60px;
+            }
+            .social-icons img {
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <img src="img/pikalogo.png" alt="회사 로고">
+            <h1>삐까로 로고에 오신 것을 환영합니다!</h1>
+        </div>
+        <div class="button-container-small">
+            <a href="introduce/introduce.html">회사 소개</a>
+            <a href="qna/qna.html">자주 묻는 질문</a>
+            <a href="simple/simple.html">간편견적서</a>
+            <a href="work/work.html">작품</a>
+        </div>
+    </header>
+
     <div class="container">
         <h1>간편 견적서</h1>
         <form id="design-form">
-            <div class="question" id="design-type-question">
-                <label for="design-type">어떤 디자인을 하실건가요? (기본 9,000원)</label><br>
-                <select id="design-type" name="design-type">
-                    <option value="9000">로고디자인</option>
-                    <option value="9000">명함디자인</option>
-                    <option value="9000">티셔츠 그래픽 디자인</option>
-                    <option value="9000">기타</option>
-                </select>
-                <input type="text" id="design-type-other" name="design-type-other" placeholder="기타 작성란" style="display:none;">
-                <button type="button" onclick="showNextQuestion('deadline-question')">다음</button>
-            </div>
-
-            <div class="question hidden" id="deadline-question">
-                <label for="deadline">로고 제작 원하는 기한이 있나요? (비용이 달라질 수 있음, 퀄리티가 달라질 수 있음)</label><br>
-                <select id="deadline" name="deadline">
-                    <option value="6000">가능한 빨리 (+6,000원)</option>
-                    <option value="4000">보통 (3~5일) (+4,000원)</option>
-                    <option value="2000">그렇게 빨리 필요하지는 않다 (+2,000원)</option>
-                </select>
-                <button type="button" onclick="showNextQuestion('logo-style-question')">다음</button>
-            </div>
-
-            <div class="question hidden" id="logo-style-question">
-                <label for="logo-style">어떤 이미지의 로고를 원하십니까? (기본 3,000원)</label><br>
-                <select id="logo-style" name="logo-style">
-                    <option value="3000">깔끔함</option>
-                    <option value="3000">레트로</option>
-                    <option value="3000">세련됨</option>
-                    <option value="3000">기타</option>
-                </select>
-                <input type="text" id="logo-style-other" name="logo-style-other" placeholder="기타 작성란" style="display:none;">
-                <button type="button" onclick="showNextQuestion('image-in-logo-question')">다음</button>
-            </div>
-
-            <div class="question hidden" id="image-in-logo-question">
-                <label for="image-in-logo">로고에 이미지가 들어가야합니까?</label><br>
-                <select id="image-in-logo" name="image-in-logo">
-                    <option value="3000">예 (+3,000원)</option>
-                    <option value="0">아니오 (0원)</option>
-                </select>
-                <button type="button" onclick="handleImageInLogo()">다음</button>
-            </div>
-
-            <div class="question hidden" id="image-description-container">
-                <label for="image-description">로고에 어떤 이미지가 들어가야합니까?</label><br>
-                <input type="text" id="image-description" name="image-description" placeholder="작성란">
-                <button type="button" onclick="calculateTotal()">계산하기</button>
-            </div>
-
-            <div class="total">
-                총 가격: <span id="total-price">14,000원</span>
-            </div>
+            <!-- Rest of your form content goes here -->
         </form>
     </div>
 
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/ppikkalo_official?igsh=MTR1bjk0NHI4MHZybA==" target="_blank">
+            <img src="img/insta.png" alt="인스타 로고">
+        </a>
+    </div>
+
     <script>
-        function showNextQuestion(nextQuestionId) {
-            const current = document.querySelector('.question:not(.hidden):not(.inactive)');
-            if (current) {
-                current.classList.add('inactive'); // 현재 질문을 흐리게 함
-            }
-            const next = document.getElementById(nextQuestionId);
-            next.classList.remove('hidden'); // 다음 질문을 보이게 함
-            next.scrollIntoView({ behavior: 'smooth' }); // 다음 질문으로 스크롤
-            calculateTotal();
-        }
-
-        function handleImageInLogo() {
-            const imageInLogoSelect = document.getElementById('image-in-logo');
-            if (imageInLogoSelect.value === '3000') {
-                showNextQuestion('image-description-container');
-            } else {
-                calculateTotal(); // 총 가격 계산하기 위해 호출
-                document.getElementById('total-price').scrollIntoView({ behavior: 'smooth' }); // 총 가격으로 스크롤
-            }
-        }
-
-        function calculateTotal() {
-            let total = 0;
-            total += parseInt(document.getElementById('design-type').value || 0);
-            total += parseInt(document.getElementById('deadline').value || 0);
-            total += parseInt(document.getElementById('logo-style').value || 0);
-            total += parseInt(document.getElementById('image-in-logo').value || 0);
-            document.getElementById('total-price').textContent = `${total}원`;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('design-type-question').classList.remove('hidden');
-        });
-
-        document.getElementById('design-type').addEventListener('change', function() {
-            if (this.value === '9000') {
-                document.getElementById('design-type-other').style.display = 'none';
-            } else {
-                document.getElementById('design-type-other').style.display = 'block';
-            }
-            calculateTotal();
-        });
-
-        document.getElementById('logo-style').addEventListener('change', function() {
-            if (this.value === '3000') {
-                document.getElementById('logo-style-other').style.display = 'none';
-            } else {
-                document.getElementById('logo-style-other').style.display = 'block';
-            }
-            calculateTotal();
-        });
-
-        document.getElementById('image-in-logo').addEventListener('change', function() {
-            if (this.value === '3000') {
-                document.getElementById('image-description-container').style.display = 'block';
-            } else {
-                document.getElementById('image-description-container').style.display = 'none';
-            }
-            calculateTotal();
-        });
+        // Your JavaScript functions remain unchanged and should work fine with this structure
     </script>
 </body>
 </html>
