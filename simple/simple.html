@@ -7,12 +7,51 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .header-content img {
+            height: 50px;
+            width: auto;
+            border-radius: 5px;
+        }
+        .header-content h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .button-container-small {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .button-container-small a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 15px;
+            background-color: transparent;
+        }
+        .button-container-small a:hover {
+            color: #007BFF;
         }
         .container {
             background: white;
@@ -20,18 +59,19 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 50%;
+            margin: 20px auto; /* Center the container */
         }
         .question {
             margin-top: 20px;
             font-size: 1.2em;
-            opacity: 1; /* 기본적으로 질문을 보이게 함 */
-            transition: opacity 0.5s ease; /* 부드러운 전환 효과 */
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
         .question.inactive {
-            opacity: 0.5; /* 이전 질문을 흐리게 표시 */
+            opacity: 0.5;
         }
         .question.hidden {
-            display: none; /* 질문을 숨김 */
+            display: none;
         }
         .total {
             margin-top: 20px;
@@ -45,78 +85,30 @@
             width: 100%;
             box-sizing: border-box;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            display: flex;
-            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
-            align-items: center;
-            justify-content: space-between;
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
-        }
-        .header-content img {
-            height: 50px; /* Adjust based on your image size */
-            width: auto;
-            border-radius: 5px;
-        }
-        .header-content h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .button-container-small {
-            display: flex;
-            flex-wrap: wrap; /* Add flex-wrap for better responsiveness */
-            gap: 10px;
-        }
-        .button-container-small a {
-            color: #fff; /* Change text color to white */
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold; /* Make text bold */
-            margin: 0;
-            padding: 10px 15px; /* Add padding for better spacing */
-            background-color: transparent; /* Ensure background is transparent */
-        }
-        .button-container-small a:hover {
-            color: #007BFF; /* Optional: Change color on hover */
-        }
-        .content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
         .social-icons {
             position: fixed;
             bottom: 20px;
-            right: 20px; /* Adjust this for spacing from the right edge */
+            right: 20px;
         }
         .social-icons a {
             display: block;
-            width: 80px; /* Adjust size as needed */
+            width: 80px;
             height: 80px;
-            background: transparent; /* Remove background color */
+            background: transparent;
             border-radius: 50%;
             margin-bottom: 10px;
             text-align: center;
-            line-height: 60px; /* Center icon vertically */
+            line-height: 60px;
         }
         .social-icons img {
-            width: 50px; /* Adjust size as needed */
+            width: 50px;
             height: 50px;
             object-fit: cover;
         }
         .social-icons a:hover {
-            background: transparent; /* Ensure no background on hover */
+            background: transparent;
         }
 
-        /* Media Queries */
         @media (max-width: 768px) {
             .header-content h1 {
                 font-size: 20px;
@@ -184,7 +176,7 @@
     <div class="container">
         <h1>간편 견적서</h1>
         <form id="design-form">
-            <!-- Rest of your form content goes here -->
+            <!-- Your form questions and buttons -->
         </form>
     </div>
 
@@ -195,8 +187,5 @@
         </a>
     </div>
 
-    <script>
-        // Your JavaScript functions remain unchanged and should work fine with this structure
-    </script>
 </body>
 </html>
