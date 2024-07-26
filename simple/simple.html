@@ -12,47 +12,6 @@
             background-color: #f4f4f4;
             color: #333;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .header-content img {
-            height: 50px;
-            width: auto;
-            border-radius: 5px;
-        }
-        .header-content h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .button-container-small {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .button-container-small a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            margin: 0;
-            padding: 10px 15px;
-            background-color: transparent;
-        }
-        .button-container-small a:hover {
-            color: #007BFF;
-        }
         .container {
             width: 80%;
             margin: 20px auto;
@@ -84,29 +43,6 @@
             padding: 10px;
             width: 100%;
             box-sizing: border-box;
-        }
-        .social-icons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
-        .social-icons a {
-            display: block;
-            width: 80px;
-            height: 80px;
-            background: transparent;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            text-align: center;
-            line-height: 60px;
-        }
-        .social-icons img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-        }
-        .social-icons a:hover {
-            background: transparent;
         }
 
         @media (max-width: 768px) {
@@ -147,14 +83,6 @@
             .button-container-small a {
                 font-size: 10px;
                 padding: 6px 10px;
-            }
-            .social-icons a {
-                width: 60px;
-                height: 60px;
-            }
-            .social-icons img {
-                width: 40px;
-                height: 40px;
             }
         }
     </style>
@@ -229,13 +157,6 @@
                 총 가격: <span id="total-price">14,000원</span>
             </div>
         </form>
-    </div>
-
-    <!-- Social Media Icons -->
-    <div class="social-icons">
-        <a href="https://www.instagram.com/ppikkalo_official?igsh=MTR1bjk0NHI4MHZybA==" target="_blank">
-            <img src="../img/insta.png" alt="인스타 로고">
-        </a>
     </div>
 
     <script>
