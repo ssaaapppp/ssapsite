@@ -21,6 +21,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-size: 30px;
         }
         .white {
             background-color: #f0d9b5;
@@ -133,7 +134,7 @@
                 renderChessboard();
 
                 // Computer's move after player's move
-                computerMove();
+                setTimeout(computerMove, 1000); // Delay computer's move for 1 second
             }
         });
     </script>
