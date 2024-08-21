@@ -30,7 +30,6 @@ const pieces = [
 ];
 
 let selectedSquare = null;
-let board = Array(64).fill(null);
 
 function createChessboard() {
     for (let i = 0; i < 64; i++) {
@@ -39,6 +38,7 @@ function createChessboard() {
         square.dataset.index = i;
         chessboard.appendChild(square);
 
+        // 기물의 이모지를 표시
         if (pieces[i]) {
             const piece = document.createElement('div');
             piece.className = 'piece';
@@ -55,11 +55,13 @@ function handleSquareClick(event) {
     const square = event.currentTarget;
 
     if (selectedSquare === null) {
+        // 기물이 있는 경우 선택
         if (square.querySelector('.piece')) {
             square.classList.add('selected');
             selectedSquare = index;
         }
     } else {
+        // 선택된 기물이 있는 경우 이동 처리
         if (index !== selectedSquare) {
             const fromIndex = selectedSquare;
             const toIndex = index;
@@ -75,6 +77,7 @@ function handleSquareClick(event) {
                 selectedSquare = null;
             }
         } else {
+            // 선택 취소
             square.classList.remove('selected');
             selectedSquare = null;
         }
