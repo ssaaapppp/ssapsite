@@ -1,13 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>체스 게임</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>조각 조립 퍼즐</title>
+    <style>
+        canvas { border: 1px solid black; }
+    </style>
 </head>
 <body>
-    <div id="chessboard"></div>
-    <script src="script.js"></script>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const pieceSize = 50;
+        const pieces = [];
+        const pieceColors = ['red', 'green', 'blue', 'yellow', 'purple'];
+        let draggingPiece = null;
+
+        function drawPiece(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, pieceSize, pieceSize);
+        }
+
+        function createRandomPiece() {
+            const x = Math.floor(Math.random() * (canvas.width / pieceSize)) * pieceSize;
+            const y = Math.floor(Math.random() * (canvas.height / pieceSize)) * pieceSize;
+            const color = pieceColors[Math.floor(Math.random() * pieceColors.length)];
+            pieces.push({ x, y, color, dx: 0, dy: 0 });
+            drawPiece(x, y, color);
+        }
+
+        function drawAllPieces() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            pieces.forEach(piece => drawPiece(piece.x, piece.y, piece.color));
+        }
+
+        canvas.addEventListener('mousedown', (e) => {
+            const mouseX = e.offsetX;
+            const mouseY = e.offsetY;
+            pieces.forEach(piece => {
+                if (mouseX >= piece.x && mouseX < piece.x + pieceSize &&
+                    mouseY >= piece.y && mouseY < piece.y + pieceSize) {
+                    draggingPiece = piece;
+                }
+            });
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (draggingPiece) {
+                draggingPiece.dx = e.offsetX - draggingPiece.x;
+                draggingPiece.dy = e.offsetY - draggingPiece.y;
+                drawAllPieces();
+                drawPiece(e.offsetX - draggingPiece.dx, e.offsetY - draggingPiece.dy, draggingPiece.color);
+            }
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            if (draggingPiece) {
+                draggingPiece.x += draggingPiece.dx;
+                draggingPiece.y += draggingPiece.dy;
+                draggingPiece.dx = draggingPiece.dy = 0;
+                draggingPiece = null;
+                drawAllPieces();
+            }
+        });
+
+        for (let i = 0; i < 10; i++) {
+            createRandomPiece();
+        }
+
+    </script>
 </body>
 </html>
