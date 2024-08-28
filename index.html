@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>조각 조립 퍼즐</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 퍼즐 게임</title>
     <style>
-        canvas { border: 1px solid black; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
@@ -11,63 +23,69 @@
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
-        const pieceSize = 50;
+        const pieceSize = 100;
         const pieces = [];
         const pieceColors = ['red', 'green', 'blue', 'yellow', 'purple'];
         let draggingPiece = null;
 
-        function drawPiece(x, y, color) {
-            ctx.fillStyle = color;
-            ctx.fillRect(x, y, pieceSize, pieceSize);
+        function drawPiece(piece) {
+            ctx.fillStyle = piece.color;
+            ctx.fillRect(piece.x, piece.y, pieceSize, pieceSize);
+            ctx.strokeRect(piece.x, piece.y, pieceSize, pieceSize);
         }
 
-        function createRandomPiece() {
-            const x = Math.floor(Math.random() * (canvas.width / pieceSize)) * pieceSize;
-            const y = Math.floor(Math.random() * (canvas.height / pieceSize)) * pieceSize;
+        function createPiece(x, y) {
             const color = pieceColors[Math.floor(Math.random() * pieceColors.length)];
-            pieces.push({ x, y, color, dx: 0, dy: 0 });
-            drawPiece(x, y, color);
+            const piece = { x, y, color };
+            pieces.push(piece);
+            drawPiece(piece);
         }
 
         function drawAllPieces() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            pieces.forEach(piece => drawPiece(piece.x, piece.y, piece.color));
+            pieces.forEach(drawPiece);
         }
 
         canvas.addEventListener('mousedown', (e) => {
             const mouseX = e.offsetX;
             const mouseY = e.offsetY;
-            pieces.forEach(piece => {
-                if (mouseX >= piece.x && mouseX < piece.x + pieceSize &&
-                    mouseY >= piece.y && mouseY < piece.y + pieceSize) {
-                    draggingPiece = piece;
-                }
-            });
+            draggingPiece = pieces.find(piece =>
+                mouseX >= piece.x && mouseX <= piece.x + pieceSize &&
+                mouseY >= piece.y && mouseY <= piece.y + pieceSize
+            );
+            if (draggingPiece) {
+                pieces = pieces.filter(piece => piece !== draggingPiece);
+                drawAllPieces();
+            }
         });
 
         canvas.addEventListener('mousemove', (e) => {
             if (draggingPiece) {
-                draggingPiece.dx = e.offsetX - draggingPiece.x;
-                draggingPiece.dy = e.offsetY - draggingPiece.y;
+                draggingPiece.x = e.offsetX - pieceSize / 2;
+                draggingPiece.y = e.offsetY - pieceSize / 2;
                 drawAllPieces();
-                drawPiece(e.offsetX - draggingPiece.dx, e.offsetY - draggingPiece.dy, draggingPiece.color);
+                drawPiece(draggingPiece);
             }
         });
 
         canvas.addEventListener('mouseup', () => {
             if (draggingPiece) {
-                draggingPiece.x += draggingPiece.dx;
-                draggingPiece.y += draggingPiece.dy;
-                draggingPiece.dx = draggingPiece.dy = 0;
+                const targetX = Math.round(draggingPiece.x / pieceSize) * pieceSize;
+                const targetY = Math.round(draggingPiece.y / pieceSize) * pieceSize;
+                draggingPiece.x = targetX;
+                draggingPiece.y = targetY;
+                pieces.push(draggingPiece);
                 draggingPiece = null;
                 drawAllPieces();
             }
         });
 
+        // 초기 조각 생성
         for (let i = 0; i < 10; i++) {
-            createRandomPiece();
+            const x = Math.floor(Math.random() * (canvas.width / pieceSize)) * pieceSize;
+            const y = Math.floor(Math.random() * (canvas.height / pieceSize)) * pieceSize;
+            createPiece(x, y);
         }
-
     </script>
 </body>
 </html>
