@@ -66,8 +66,29 @@
             }
         }
 
+        function drawPreview() {
+            const previewX = currentX;
+            let previewY = currentY;
+
+            // Move the preview down until it hits the bottom or another block
+            while (!isCollision(0, previewY + 1, currentTetromino)) {
+                previewY++;
+            }
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'; // Semi-transparent color for preview
+            for (let row = 0; row < currentTetromino.length; row++) {
+                for (let col = 0; col < currentTetromino[row].length; col++) {
+                    if (currentTetromino[row][col]) {
+                        ctx.fillRect((previewX + col) * scale, (previewY + row) * scale, scale, scale);
+                        ctx.strokeRect((previewX + col) * scale, (previewY + row) * scale, scale, scale);
+                    }
+                }
+            }
+        }
+
         function draw() {
             drawBoard();
+            drawPreview(); // Draw the preview of the falling tetromino
             drawTetromino();
         }
 
