@@ -148,6 +148,8 @@
         function move(dir) {
             if (!isCollision(dir, 0, currentTetromino)) {
                 currentX += dir;
+                // Ensure the preview moves with the current tetromino
+                draw();
             }
         }
 
