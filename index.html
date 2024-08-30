@@ -71,7 +71,7 @@
             let previewY = currentY;
 
             // Move the preview down until it hits the bottom or another block
-            while (!isCollision(0, previewY + 1, currentTetromino)) {
+            while (!isCollision(0, 1, currentTetromino)) {
                 previewY++;
             }
 
