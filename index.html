@@ -38,7 +38,8 @@
         const colors = ['cyan', 'purple', 'yellow', 'green', 'red', 'orange', 'blue'];
         let board = Array.from({ length: rows }, () => Array(cols).fill(0));
         let currentTetromino, currentColor, currentX, currentY;
-        let gameInterval;
+        let lastTime = 0;
+        const dropInterval = 1000; // 밀리초 단위, 조각이 내려오는 간격
 
         function drawBoard() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -135,8 +136,8 @@
             currentX = Math.floor(cols / 2) - Math.floor(currentTetromino[0].length / 2);
             currentY = 0;
             if (isCollision(0, 0, currentTetromino)) {
-                clearInterval(gameInterval);
                 alert('Game Over');
+                window.location.reload(); // 게임 오버 시 페이지 새로 고침
             }
         }
 
@@ -158,11 +159,20 @@
             draw();
         }
 
+        function gameLoop(timestamp) {
+            if (timestamp - lastTime > dropInterval) {
+                lastTime = timestamp;
+                drop();
+                draw();
+            }
+            requestAnimationFrame(gameLoop);
+        }
+
         function startGame() {
             board = Array.from({ length: rows }, () => Array(cols).fill(0));
             newTetromino();
             draw();
-            gameInterval = setInterval(drop, 1000);
+            requestAnimationFrame(gameLoop);
         }
 
         document.addEventListener('keydown', keyDown);
