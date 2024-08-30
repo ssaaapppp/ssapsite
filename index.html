@@ -67,7 +67,7 @@
         }
 
         function drawPreview() {
-            const previewX = currentX;
+            let previewX = currentX;
             let previewY = currentY;
 
             // Move the preview down until it hits the bottom or another block
@@ -75,6 +75,7 @@
                 previewY++;
             }
 
+            // Draw preview
             ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'; // Semi-transparent color for preview
             for (let row = 0; row < currentTetromino.length; row++) {
                 for (let col = 0; col < currentTetromino[row].length; col++) {
@@ -88,8 +89,8 @@
 
         function draw() {
             drawBoard();
-            drawPreview(); // Draw the preview of the falling tetromino
             drawTetromino();
+            drawPreview();
         }
 
         function isCollision(offsetX, offsetY, shape) {
