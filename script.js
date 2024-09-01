@@ -2,7 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     const scoreDisplay = document.querySelector('#score');
     const width = 10;
-    let squares = Array.from(document.querySelectorAll('.grid div'));
+    const squares = Array.from({length: 200}, () => {
+        const square = document.createElement('div');
+        grid.appendChild(square);
+        return square;
+    });
+
     let currentPosition = 4;
     let currentRotation = 0;
     let score = 0;
@@ -125,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('down').addEventListener('click', moveDown);
 
     // 점수 추가
-    function addScore() {
+        function addScore() {
         for (let i = 0; i < 199; i += width) {
             const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
             if (row.every(index => squares[index].classList.contains('taken'))) {
