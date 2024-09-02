@@ -55,6 +55,8 @@ function toggleSign() {
     if (matches) {
         const lastNumber = matches[0];
         const signToggled = lastNumber.startsWith('-') ? lastNumber.slice(1) : '-' + lastNumber;
+        
+        // 가장 최근의 숫자 앞에 + 또는 - 추가
         display.value = value.slice(0, -lastNumber.length) + signToggled;
     }
 }
