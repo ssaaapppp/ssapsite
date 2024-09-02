@@ -38,7 +38,7 @@
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(5, 60px);
+            grid-template-rows: repeat(6, 60px);
             gap: 10px;
         }
         .button {
@@ -92,28 +92,39 @@
         <input type="text" id="display" class="display" disabled>
         <div class="buttons">
             <div class="button" onclick="clearDisplay()">C</div>
+            <div class="button" onclick="deleteCharacter()">←</div>
             <div class="button operator" onclick="appendCharacter('/')">/</div>
             <div class="button operator" onclick="appendCharacter('*')">*</div>
-            <div class="button operator" onclick="appendCharacter('-')">-</div>
             <div class="button" onclick="appendCharacter('7')">7</div>
             <div class="button" onclick="appendCharacter('8')">8</div>
             <div class="button" onclick="appendCharacter('9')">9</div>
-            <div class="button operator" onclick="appendCharacter('+')">+</div>
+            <div class="button operator" onclick="appendCharacter('-')">-</div>
             <div class="button" onclick="appendCharacter('4')">4</div>
             <div class="button" onclick="appendCharacter('5')">5</div>
             <div class="button" onclick="appendCharacter('6')">6</div>
-            <div class="button equal operator" onclick="calculate()">=</div>
+            <div class="button operator" onclick="appendCharacter('+')">+</div>
             <div class="button" onclick="appendCharacter('1')">1</div>
             <div class="button" onclick="appendCharacter('2')">2</div>
             <div class="button" onclick="appendCharacter('3')">3</div>
+            <div class="button equal operator" onclick="calculate()">=</div>
             <div class="button double" onclick="appendCharacter('0')">0</div>
             <div class="button" onclick="appendCharacter('.')">.</div>
+            <div class="button" onclick="calculateSquareRoot()">√</div>
+            <div class="button" onclick="calculateLog()">log</div>
+            <div class="button" onclick="calculateExponent()">exp</div>
+            <div class="button" onclick="toggleSign()">±</div>
+            <div class="button" onclick="calculateFactorial()">n!</div>
         </div>
     </div>
 
     <script>
         function clearDisplay() {
             document.getElementById('display').value = '';
+        }
+
+        function deleteCharacter() {
+            const display = document.getElementById('display');
+            display.value = display.value.slice(0, -1);
         }
 
         function appendCharacter(char) {
@@ -127,6 +138,56 @@
             } catch (e) {
                 display.value = 'Error';
             }
+        }
+
+        function calculateSquareRoot() {
+            const display = document.getElementById('display');
+            try {
+                display.value = Math.sqrt(eval(display.value));
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+
+        function calculateLog() {
+            const display = document.getElementById('display');
+            try {
+                display.value = Math.log10(eval(display.value));
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+
+        function calculateExponent() {
+            const display = document.getElementById('display');
+            try {
+                display.value = Math.exp(eval(display.value));
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+
+        function toggleSign() {
+            const display = document.getElementById('display');
+            if (display.value.startsWith('-')) {
+                display.value = display.value.slice(1);
+            } else {
+                display.value = '-' + display.value;
+            }
+        }
+
+        function calculateFactorial() {
+            const display = document.getElementById('display');
+            let num = eval(display.value);
+            if (num < 0 || !Number.isInteger(num)) {
+                display.value = 'Error';
+                return;
+            }
+            let result = 1;
+            for (let i = 1; i <= num; i++) {
+                result *= i;
+            }
+            display.value = result;
         }
     </script>
 </body>
