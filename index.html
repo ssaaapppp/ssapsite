@@ -38,10 +38,10 @@
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 60px);
             gap: 10px;
         }
         .button {
-            height: 60px;
             font-size: 18px;
             display: flex;
             align-items: center;
@@ -59,6 +59,9 @@
         .button.double {
             grid-column: span 2;
         }
+        .button.equal {
+            grid-row: span 2;
+        }
 
         /* 반응형 디자인 */
         @media (max-width: 480px) {
@@ -66,7 +69,6 @@
                 padding: 15px;
             }
             .button {
-                height: 50px;
                 font-size: 16px;
             }
             .display {
@@ -76,7 +78,6 @@
         }
         @media (max-width: 360px) {
             .button {
-                height: 40px;
                 font-size: 14px;
             }
             .display {
@@ -101,12 +102,12 @@
             <div class="button" onclick="appendCharacter('4')">4</div>
             <div class="button" onclick="appendCharacter('5')">5</div>
             <div class="button" onclick="appendCharacter('6')">6</div>
-            <div class="button double operator" onclick="calculate()">=</div>
+            <div class="button equal operator" onclick="calculate()">=</div>
             <div class="button" onclick="appendCharacter('1')">1</div>
             <div class="button" onclick="appendCharacter('2')">2</div>
             <div class="button" onclick="appendCharacter('3')">3</div>
             <div class="button double" onclick="appendCharacter('0')">0</div>
-            <div class="button double" onclick="appendCharacter('.')">.</div>
+            <div class="button" onclick="appendCharacter('.')">.</div>
         </div>
     </div>
 
