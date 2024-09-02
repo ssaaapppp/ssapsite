@@ -3,23 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tetris Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>공학용 계산기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .calculator {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .display {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .button {
+            height: 50px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #f9f9f9;
+            cursor: pointer;
+            user-select: none;
+        }
+        .button.operator {
+            background: #f0ad4e;
+            color: white;
+        }
+        .button.double {
+            grid-column: span 2;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tetris</h1>
-    <div class="tetris-container">
-        <div class="grid"></div>
-        <div class="score-display">
-            <h2>Score: <span id="score">0</span></h2>
-        </div>
-        <div class="controls">
-            <button id="left">Left</button>
-            <button id="rotate">Rotate</button>
-            <button id="right">Right</button>
-            <button id="down">Down</button>
+    <div class="calculator">
+        <input type="text" id="display" class="display" disabled>
+        <div class="buttons">
+            <div class="button" onclick="clearDisplay()">C</div>
+            <div class="button operator" onclick="appendCharacter('/')">/</div>
+            <div class="button operator" onclick="appendCharacter('*')">*</div>
+            <div class="button operator" onclick="appendCharacter('-')">-</div>
+            <div class="button" onclick="appendCharacter('7')">7</div>
+            <div class="button" onclick="appendCharacter('8')">8</div>
+            <div class="button" onclick="appendCharacter('9')">9</div>
+            <div class="button operator" onclick="appendCharacter('+')">+</div>
+            <div class="button" onclick="appendCharacter('4')">4</div>
+            <div class="button" onclick="appendCharacter('5')">5</div>
+            <div class="button" onclick="appendCharacter('6')">6</div>
+            <div class="button double operator" onclick="calculate()">=</div>
+            <div class="button" onclick="appendCharacter('1')">1</div>
+            <div class="button" onclick="appendCharacter('2')">2</div>
+            <div class="button" onclick="appendCharacter('3')">3</div>
+            <div class="button double" onclick="appendCharacter('0')">0</div>
+            <div class="button double" onclick="appendCharacter('.')">.</div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function appendCharacter(char) {
+            document.getElementById('display').value += char;
+        }
+
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                display.value = eval(display.value);
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+    </script>
 </body>
 </html>
