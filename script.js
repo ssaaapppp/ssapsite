@@ -45,12 +45,16 @@ function calculateSquareRoot() {
 function insertLog() {
     const display = document.getElementById('display');
     display.value += 'log(';
-    display.value += `<span class="log-inputs"><input id="log-base" type="text" placeholder="base">, <input id="log-value" type="text" placeholder="value"></span>)`;
+
+    // 밑자리와 지수 입력 필드를 추가
+    const baseInput = '<sup><input type="text" size="1" placeholder="base"></sup>';
+    const valueInput = '<input type="text" size="2" placeholder="value">';
+    display.value += `${baseInput}, ${valueInput})`;
 }
 
 function calculateLog() {
-    const base = parseFloat(document.getElementById('log-base').value);
-    const value = parseFloat(document.getElementById('log-value').value);
+    const base = parseFloat(document.querySelector('input[placeholder="base"]').value);
+    const value = parseFloat(document.querySelector('input[placeholder="value"]').value);
     const display = document.getElementById('display');
     try {
         if (isNaN(base) || isNaN(value)) {
