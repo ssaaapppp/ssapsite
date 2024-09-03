@@ -13,8 +13,12 @@ function appendCharacter(char) {
     const lastChar = currentValue.slice(-1);
 
     // 연산자가 연속으로 입력되지 않도록 방지
-    if ('+-*/'.includes(char) && '+-*/'.includes(lastChar)) {
-        display.value = currentValue.slice(0, -1) + char;  // 마지막 연산자를 교체
+    if ('+-*/'.includes(char)) {
+        if ('+-*/'.includes(lastChar)) {
+            display.value = currentValue.slice(0, -1) + char;  // 마지막 연산자를 교체
+        } else {
+            display.value += char;
+        }
     } else {
         display.value += char;
     }
