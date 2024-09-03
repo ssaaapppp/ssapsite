@@ -4,22 +4,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background-color: #f4f4f4;
+    margin: 0;
 }
+
 .calculator {
     border: 1px solid #ddd;
     padding: 20px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
+    width: 300px;
 }
+
 .display {
     width: 100%;
-    height: 50px;
+    height: 40px;
     margin-bottom: 10px;
     font-size: 24px;
     text-align: right;
@@ -27,14 +27,18 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    background: white;
+    overflow-x: auto;
 }
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 60px);
-    gap: 10px;
+    gap: 5px;
 }
+
 .button {
+    height: 50px;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -45,49 +49,21 @@ body {
     cursor: pointer;
     user-select: none;
 }
+
 .button.operator {
     background: #f0ad4e;
     color: white;
 }
+
 .button.double {
     grid-column: span 2;
 }
-.button.equal {
-    grid-row: span 2;
-}
 
-.log-inputs {
-    display: inline-block;
-    font-size: 18px;
-    margin: 0 5px;
-}
-
-.log-inputs input {
+input[type="text"] {
     width: 40px;
-    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #333;
+    margin: 0 5px;
     text-align: center;
-    margin-left: 5px;
-}
-
-/* 반응형 디자인 */
-@media (max-width: 480px) {
-    .calculator {
-        padding: 15px;
-    }
-    .button {
-        font-size: 16px;
-    }
-    .display {
-        height: 40px;
-        font-size: 20px;
-    }
-}
-@media (max-width: 360px) {
-    .button {
-        font-size: 14px;
-    }
-    .display {
-        height: 35px;
-        font-size: 18px;
-    }
+    font-size: 18px;
 }
