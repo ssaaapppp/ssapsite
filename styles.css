@@ -56,6 +56,19 @@ body {
     grid-row: span 2;
 }
 
+.log-inputs {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.log-inputs input {
+    width: 40px;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 5px;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 480px) {
     .calculator {
