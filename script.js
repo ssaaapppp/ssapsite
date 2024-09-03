@@ -74,13 +74,14 @@ function calculateExponent() {
 function toggleSign() {
     const display = document.getElementById('display');
     const value = display.value;
-    const matches = value.match(/-?\d+(\.\d+)?$/);
 
-    if (matches) {
-        const lastNumber = matches[0];
-        const signToggled = lastNumber.startsWith('-') ? lastNumber.slice(1) : '-' + lastNumber;
-        
-        display.value = value.slice(0, -lastNumber.length) + signToggled;
+    // 가장 최근에 입력된 숫자의 부호를 바꿈
+    if (value !== "") {
+        if (value.startsWith('-')) {
+            display.value = value.slice(1); // 부호를 제거
+        } else {
+            display.value = '-' + value; // 부호를 추가
+        }
     }
 }
 
