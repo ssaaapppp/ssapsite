@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아직사대부고사이트</title>
+    <title>공학용 계산기</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" class="display" disabled>
+        <div id="display" class="display"></div>
         <div class="buttons">
             <div class="button" onclick="clearDisplay()">C</div>
-            <div class="button" onclick="deleteCharacter()">←</div>
+            <div class="button" onclick="deleteCharacter()">DEL</div>
             <div class="button operator" onclick="appendCharacter('/')">/</div>
             <div class="button operator" onclick="appendCharacter('*')">*</div>
             <div class="button" onclick="appendCharacter('7')">7</div>
@@ -25,17 +25,16 @@
             <div class="button" onclick="appendCharacter('1')">1</div>
             <div class="button" onclick="appendCharacter('2')">2</div>
             <div class="button" onclick="appendCharacter('3')">3</div>
-            <div class="button equal operator" onclick="calculate()">=</div>
             <div class="button double" onclick="appendCharacter('0')">0</div>
             <div class="button" onclick="appendCharacter('.')">.</div>
-            <div class="button" onclick="calculateSquareRoot()">√</div>
-            <div class="button" onclick="insertLog()">log</div>
-            <div class="button" onclick="calculateExponent()">exp</div>
-            <div class="button" onclick="toggleSign()">±</div>
-            <div class="button" onclick="calculateFactorial()">n!</div>
+            <div class="button operator" onclick="calculate()">=</div>
+            <div class="button operator" onclick="toggleSign()">±</div>
+            <div class="button operator" onclick="calculateSquareRoot()">√</div>
+            <div class="button operator" onclick="insertLog()">log</div>
+            <div class="button operator" onclick="calculateFactorial()">n!</div>
+            <div class="button operator" onclick="calculateExponent()">eˣ</div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
