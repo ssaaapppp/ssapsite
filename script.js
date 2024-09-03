@@ -38,10 +38,21 @@ function calculateSquareRoot() {
     }
 }
 
+function insertLog() {
+    const display = document.getElementById('display');
+    display.value += 'log(';
+    display.value += `<span class="log-inputs"><input id="log-base" type="text" placeholder="base">, <input id="log-value" type="text" placeholder="value"></span>)`;
+}
+
 function calculateLog() {
+    const base = parseFloat(document.getElementById('log-base').value);
+    const value = parseFloat(document.getElementById('log-value').value);
     const display = document.getElementById('display');
     try {
-        display.value = Math.log10(eval(display.value));
+        if (isNaN(base) || isNaN(value)) {
+            throw new Error('Invalid input');
+        }
+        display.value = Math.log(value) / Math.log(base);
     } catch (e) {
         display.value = 'Error';
     }
