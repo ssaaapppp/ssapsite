@@ -75,12 +75,16 @@ function toggleSign() {
     const display = document.getElementById('display');
     const value = display.value;
 
-    // 가장 최근에 입력된 숫자의 부호를 바꿈
-    if (value !== "") {
-        if (value.startsWith('-')) {
-            display.value = value.slice(1); // 부호를 제거
-        } else {
-            display.value = '-' + value; // 부호를 추가
+    // 마지막 연산자를 찾아 부호를 반전시킴
+    const lastOperatorIndex = Math.max(value.lastIndexOf('+'), value.lastIndexOf('-'));
+
+    if (lastOperatorIndex > 0) { // 0이 아닌 경우에만 부호를 반전시킴
+        const operator = value.charAt(lastOperatorIndex);
+
+        if (operator === '+') {
+            display.value = value.slice(0, lastOperatorIndex) + '-' + value.slice(lastOperatorIndex + 1);
+        } else if (operator === '-') {
+            display.value = value.slice(0, lastOperatorIndex) + '+' + value.slice(lastOperatorIndex + 1);
         }
     }
 }
