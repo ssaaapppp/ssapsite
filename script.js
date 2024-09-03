@@ -27,6 +27,14 @@ function appendCharacter(char) {
             display.innerHTML += char;
         }
     } 
+    // 0이 처음부터 여러 번 입력되지 않도록 방지
+    else if (char === '0') {
+        const lastNumber = currentValue.split(/[\+\-\*\/]/).pop(); // 마지막 숫자 추출
+        if (lastNumber !== '0') {
+            display.innerHTML += char;
+        }
+    }
+    // 숫자나 다른 문자는 그대로 추가
     else {
         display.innerHTML += char;
     }
