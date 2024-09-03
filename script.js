@@ -19,7 +19,15 @@ function appendCharacter(char) {
         } else {
             display.innerHTML += char;
         }
-    } else {
+    } 
+    // 소수점이 연속으로 입력되지 않도록 방지
+    else if (char === '.') {
+        const lastNumber = currentValue.split(/[\+\-\*\/]/).pop(); // 마지막 숫자 추출
+        if (!lastNumber.includes('.')) {
+            display.innerHTML += char;
+        }
+    } 
+    else {
         display.innerHTML += char;
     }
 }
