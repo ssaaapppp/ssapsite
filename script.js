@@ -8,7 +8,16 @@ function deleteCharacter() {
 }
 
 function appendCharacter(char) {
-    document.getElementById('display').value += char;
+    const display = document.getElementById('display');
+    const currentValue = display.value;
+    const lastChar = currentValue.slice(-1);
+
+    // 연산자가 연속으로 입력되지 않도록 방지
+    if ('+-*/'.includes(char) && '+-*/'.includes(lastChar)) {
+        display.value = currentValue.slice(0, -1) + char;  // 마지막 연산자를 교체
+    } else {
+        display.value += char;
+    }
 }
 
 function calculate() {
@@ -56,7 +65,6 @@ function toggleSign() {
         const lastNumber = matches[0];
         const signToggled = lastNumber.startsWith('-') ? lastNumber.slice(1) : '-' + lastNumber;
         
-        // 가장 최근의 숫자 앞에 + 또는 - 추가
         display.value = value.slice(0, -lastNumber.length) + signToggled;
     }
 }
