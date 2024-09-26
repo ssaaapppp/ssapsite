@@ -10,9 +10,23 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-DQNSZ8D76S');
+
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "111222"; // 비밀번호를 문자열로 입력
+
+            if (password === correctPassword) {
+                window.location.href = "secret2.html";
+            } else {
+                alert("비밀번호가 틀렸습니다.");
+            }
+        }
     </script>
 </head>
 <body>
+    <h1>비밀번호 입력</h1>
+    <input type="password" id="password" placeholder="비밀번호 입력">
+    <button onclick="checkPassword()">확인</button>
     <p>
         <a href="2.html">버튼</a>
     </p>
