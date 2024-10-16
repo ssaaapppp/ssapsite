@@ -13,25 +13,6 @@
     </script>
 </head>
 <body>
-    <h1>메시지 입력</h1>
-    <form id="messageForm">
-        <label for="message">메시지:</label>
-        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
-        <br>
-        <button type="submit">전송</button>
-    </form>
-
-    <script>
-        document.getElementById('messageForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const message = document.getElementById('message').value;
-
-            // 메시지를 콘솔에 출력 (추후 서버로 전송하는 부분으로 변경)
-            console.log('전송된 메시지:', message);
-
-            // 입력 필드 초기화
-            document.getElementById('message').value = '';
-        });
-    </script>
+    <h1>환영합니다!</h1>
 </body>
 </html>
